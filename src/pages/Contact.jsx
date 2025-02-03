@@ -62,10 +62,10 @@ const Contact = () => {
 
     return (
         <form className="fade-in" onSubmit={handleSubmit} style={{ maxWidth: "800px", color: "black", width: "800vw", margin: "0 auto", textAlign: "left", padding: "20px" }}>
-            <h2>Contact us!</h2>
+            <h2>Contactez-nous!</h2>
 
             <div style={{ marginBottom: "15px" }}>
-                <label>First name :</label>
+                <label>Prénom :</label>
                 <input
                     type="text"
                     color="black"
@@ -78,7 +78,7 @@ const Contact = () => {
             </div>
 
             <div style={{ marginBottom: "15px" }}>
-                <label>Last name :</label>
+                <label>Nom :</label>
                 <input
                     type="text"
                     name="lastName"
@@ -90,7 +90,7 @@ const Contact = () => {
             </div>
 
             <div style={{ marginBottom: "15px" }}>
-                <label>Email :</label>
+                <label>Courriel :</label>
                 <input
                     type="email"
                     name="email"

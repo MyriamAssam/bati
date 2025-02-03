@@ -82,7 +82,7 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
 
         await Promise.all([
             sendEmail(email, "Your Contact Request - Bâti Québec Inc.", "", userHtml),
-            sendEmail("mimimontmo2@gmail.com", "New Contact Request", "", adminHtml, attachments)
+            sendEmail("info@batiquebec.com", "New Contact Request", "", adminHtml, attachments)
         ]);
 
         res.status(201).json({ message: "✅ Contact request sent successfully!" });
@@ -138,7 +138,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
 
         await Promise.all([
             sendEmail(email, "Confirmation de Rendez-vous - Bâti Québec Inc.", "", userHtml),
-            sendEmail("mimimontmo2@gmail.com", "Nouveau Rendez-vous Réservé", "", adminHtml, attachments)
+            sendEmail("billy@batiquebec.com", "Nouveau Rendez-vous Réservé", "", adminHtml, attachments)
         ]);
 
         res.status(201).json({ message: "✅ Rendez-vous enregistré avec succès ! Un email de confirmation a été envoyé." });

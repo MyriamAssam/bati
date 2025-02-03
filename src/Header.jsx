@@ -3,19 +3,12 @@ import { Link } from "react-router-dom";
 const Header = () => {
     return (
         <header style={headerStyle}>
-            {/* 📌 Section Contact à gauche */}
-            <div style={contactStyle}>
-                <span style={{ fontWeight: "bold" }}>RBQ : 5587-0471-01</span>
-                <span>(514) 992-8595</span>
-                <a href="mailto:info@batiquebec.com" style={emailStyle}>info@batiquebec.com</a>
-            </div>
-
-            {/* 📌 Logo centré */}
+            {/* 📌 Logo plus à gauche */}
             <div style={logoContainer}>
                 <img src="/images/logoBati.jpg" alt="Logo" style={logoStyle} />
             </div>
 
-            {/* 📌 Navigation à droite */}
+            {/* 📌 Navigation plus à droite */}
             <nav style={menuStyle}>
                 <ul style={menuListStyle}>
                     <li><Link to="/" style={linkStyle}>Home</Link></li>
@@ -44,38 +37,26 @@ const headerStyle = {
     right: 0,
     zIndex: 1000,
     boxSizing: "border-box",
-    height: "80px" // 🔹 Ajuste la hauteur du header
+    height: "80px"
 };
 
-const contactStyle = {
-    display: "flex",
-    alignItems: "center",
-    gap: "15px",
-    flex: 1,
-    justifyContent: "flex-start"
-};
-
-const emailStyle = {
-    color: "white",
-    textDecoration: "none"
-};
-
-/* ✅ Centrage parfait du logo */
 const logoContainer = {
     flex: 1,
     display: "flex",
-    justifyContent: "center"
+    justifyContent: "flex-start", /* ✅ Ajouté pour aligner à gauche */
+    marginLeft: "20px"
 };
 
 const logoStyle = {
-    height: "60px", // 🔹 Réduit la taille du logo
+    height: "60px",
     width: "auto"
 };
 
 const menuStyle = {
     flex: 1,
     display: "flex",
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
+    marginRight: "20px"
 };
 
 const menuListStyle = {
@@ -92,7 +73,6 @@ const linkStyle = {
     fontSize: "16px"
 };
 
-/* 🔹 Ajout pour éviter que le contenu ne soit caché sous le header */
 document.body.style.marginTop = "80px";
 
 export default Header;

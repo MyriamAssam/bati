@@ -53,6 +53,7 @@ const Home = () => {
                         color: "black",
                         textAlign: "center",
                         background: "transparent",
+                        backgroundColor: "white",
                         padding: "5vw",
                         borderRadius: "10px",
                         width: "90%",

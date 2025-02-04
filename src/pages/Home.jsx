@@ -52,7 +52,7 @@ const Home = () => {
                         transform: "translate(-50%, -50%)",
                         color: "black",
                         textAlign: "center",
-                        backgroundColor: "rgba(255, 255, 255, 0.95)",
+                        background: "transparent",
                         padding: "5vw",
                         borderRadius: "10px",
                         width: "90%",

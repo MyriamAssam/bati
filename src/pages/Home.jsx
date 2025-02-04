@@ -57,7 +57,7 @@ const Home = () => {
                         borderRadius: "10px",
                         width: "90%",
                         maxWidth: "700px",
-                        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                        boxShadow: "10px 5px 5px rgba(0, 0, 0, 0.1)",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",

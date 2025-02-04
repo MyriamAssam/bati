@@ -162,6 +162,7 @@ body {
   align-items: center;
   padding: 15px;
   text-align: center;
+  background-color: #8B5E3C;
 }
 
 .footer-container {
@@ -172,6 +173,7 @@ body {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #8B5E3C;
 }
 
 @media (max-width: 768px) {
@@ -179,11 +181,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    background-color: #8B5E3C;
   }
 
   .footer-section {
     width: 100%;
     padding: 10px;
+    background-color: #8B5E3C;
   }
 
 }
@@ -253,6 +257,7 @@ body {
   .footer-section {
     width: 100%;
     padding: 15px;
+    background-color: #8B5E3C;
   }
 }
 

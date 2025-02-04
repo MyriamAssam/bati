@@ -41,6 +41,9 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
 };
 
 
+app.get("/", (req, res) => {
+    res.send("Bienvenue sur l'API de Bâti Québec !");
+});
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, "uploads/"),
@@ -148,4 +151,6 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
     }
 });
 
-app.listen(5000, () => console.log("🚀 Serveur en cours d'exécution sur le port 5000"));
+const port = process.env.PORT || 5000;
+app.listen(port, () => console.log(`🚀 Serveur en cours d'exécution sur le port ${port}`));
+

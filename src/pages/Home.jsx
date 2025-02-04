@@ -38,6 +38,7 @@ const Home = () => {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
+                            marginRight: "200px",
 
                             position: "absolute",
                             top: "0",

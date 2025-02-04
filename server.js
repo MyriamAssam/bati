@@ -12,13 +12,23 @@ dotenv.config();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const app = express();
+
+// Connexion à MongoDB
 connectDB();
+
+// Middleware
 app.use(cors());
-app.use(express.json());  // Ajout du middleware pour parser le JSON
-app.use(express.urlencoded({ extended: true }));  // Ajout pour parser les formulaires
+app.use(express.json());
 app.use(express.static("uploads"));
 
+// Configuration Multer pour l'upload
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => cb(null, "uploads/"),
+    filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+});
+const upload = multer({ storage });
 
+// Fonction pour envoyer un email
 const sendEmail = async (to, subject, text, html, attachments = []) => {
     const msg = {
         to,
@@ -42,97 +52,64 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
     }
 };
 
-
-
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, "uploads/"),
-    filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
-});
-const upload = multer({ storage });
+// Route pour le contact
 app.post("/api/contact", upload.array("files", 5), async (req, res) => {
     try {
         const { firstName, lastName, email, description } = req.body;
-
-
-        const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
-
-
-        const attachments = req.files.length > 0 ? req.files.map(file => ({
+        const attachments = req.files.map(file => ({
             filename: file.originalname,
             path: file.path
-        })) : [];
+        }));
 
-
-        const userHtml = `
-            <h3>Hello ${firstName},</h3>
-            <p>Thank you for contacting us. We have received your request and will get back to you shortly.</p>
-            <p><strong>Your message:</strong> ${description}</p>
-            <br>
-            <p><strong>Best regards,</strong><br>Bâti Québec Inc.</p>
-        `;
-
-        const adminHtml = `
-            <h3>New Contact Request</h3>
-            <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Message:</strong> ${description}</p>
-            ${attachments.length > 0 ? `<p><strong>Attachments included.</strong></p>` : ""}
-            <br>
-            <p><strong>Bâti Québec Inc.</strong></p>
-        `;
-
-
+        // Envoi des emails
         await Promise.all([
-            sendEmail(email, "Your Contact Request - Bâti Québec Inc.", "", userHtml),
-            sendEmail("info@batiquebec.com", "New Contact Request", "", adminHtml, attachments)
+            sendEmail(email, "Votre Demande de Contact - Bâti Québec", "", `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`),
+            sendEmail("info@batiquebec.com", "Nouvelle Demande de Contact", "", `<p>Nouveau message de ${firstName} ${lastName}.</p>`, attachments)
         ]);
 
-        res.status(201).json({ message: "✅ Contact request sent successfully!" });
+        res.status(201).json({ message: "✅ Contact envoyé avec succès !" });
     } catch (error) {
-        console.error("❌ Error processing contact request:", error);
-        res.status(500).json({ message: "❌ Error processing the request." });
+        console.error("❌ Erreur de contact :", error);
+        res.status(500).json({ message: "❌ Erreur lors du traitement de la demande." });
     }
 });
 
+// Route pour les rendez-vous
 app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
     try {
-        console.log("📥 Requête reçue:", req.body);
-        console.log("📥 Fichiers reçus:", req.files);
-
         const { firstName, lastName, email, description, date, time } = req.body;
 
-        // Vérifier si des champs obligatoires sont manquants
-        if (!firstName || !lastName || !email || !date || !time) {
-            console.error("⚠️ Données manquantes !");
-            return res.status(400).json({ message: "Tous les champs sont requis !" });
-        }
-
-        // Vérifier si la connexion MongoDB est bien établie
-        console.log("🔍 Vérification de la connexion MongoDB...");
+        // Vérification si le créneau est libre
         const existingRdv = await Rdv.findOne({ date, time });
-
         if (existingRdv) {
-            console.log("❌ Créneau déjà réservé !");
-            return res.status(400).json({ message: "Ce créneau est déjà réservé. Veuillez choisir une autre date ou heure." });
+            return res.status(400).json({ message: "Ce créneau est déjà réservé." });
         }
 
-        // Sauvegarde du rendez-vous
-        console.log("💾 Enregistrement du RDV...");
         const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
-        const newRdv = new Rdv({ firstName, lastName, email, description, date, time, files: fileUrls });
-
+        const newRdv = new Rdv({ ...req.body, files: fileUrls });
         await newRdv.save();
-        console.log("✅ Rendez-vous enregistré avec succès !");
 
-        res.status(201).json({ message: "✅ Rendez-vous enregistré avec succès !" });
+        // Envoi des emails
+        await Promise.all([
+            sendEmail(email, "Confirmation de Rendez-vous - Bâti Québec", "", `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`),
+            sendEmail("billy@batiquebec.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
+        ]);
+
+        res.status(201).json({ message: "✅ RDV enregistré et confirmé par email." });
     } catch (error) {
-        console.error("❌ Erreur lors de l'enregistrement :", error);
-        res.status(500).json({ message: "❌ Erreur lors de l'enregistrement.", error: error.message });
+        console.error("❌ Erreur RDV :", error);
+        res.status(500).json({ message: "❌ Problème lors de l'enregistrement." });
     }
 });
 
+// Servir les fichiers statiques depuis "dist" après les routes API
+app.use(express.static(path.join(path.resolve(), "dist")));
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve("dist", "index.html"));
+});
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`🚀 Serveur en cours d'exécution sur le port ${port}`));
-
+// Démarrage du serveur
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`🚀 Serveur en cours d'exécution sur le port ${PORT}`);
+});

@@ -38,7 +38,7 @@ const Home = () => {
                             height: "auto",
                             maxHeight: "80vh",
                             objectFit: "cover",
-                            position: relative
+                            position: "relative"
                         }}
                     />
 

@@ -25,7 +25,7 @@ const Home = () => {
                 { }
                 <div style={{
                     width: "100%",
-                    maxHeight: "80vh",
+                    height: "80vh",
 
                     overflow: "hidden",
                     position: "relative"
@@ -35,10 +35,12 @@ const Home = () => {
                         alt="Background"
                         style={{
                             width: "100%",
-                            height: "auto",
-                            maxHeight: "80vh",
+                            height: "100%",
+
                             objectFit: "cover",
-                            position: "relative"
+                            position: "absolute",
+                            top: "0",
+                            left: "0"
                         }}
                     />
 

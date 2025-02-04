@@ -181,12 +181,12 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .footer-section:nth-child(2) {
   /* Sélectionne la section "Nous Contacter" */
-  padding-top: 68px;
+  padding-top: 50px;
   /* Ajuste la hauteur pour bien aligner avec "Des Questions ?" */
 }
 
@@ -236,6 +236,7 @@ body {
 .footer-section img {
   display: block;
   margin: 0 auto;
+  margin-top: 1px;
 }
 
 /* 🌟 Centrer et aligner la section contact */
@@ -310,7 +311,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 

@@ -14,8 +14,10 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const app = express();
 connectDB();
 app.use(cors());
-app.use(express.json());
+app.use(express.json());  // Ajout du middleware pour parser le JSON
+app.use(express.urlencoded({ extended: true }));  // Ajout pour parser les formulaires
 app.use(express.static("uploads"));
+
 
 const sendEmail = async (to, subject, text, html, attachments = []) => {
     const msg = {

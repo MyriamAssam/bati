@@ -41,9 +41,7 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
 };
 
 
-app.get("/", (req, res) => {
-    res.send("Bienvenue sur l'API de Bâti Québec !");
-});
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, "uploads/"),

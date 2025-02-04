@@ -165,19 +165,16 @@ body {
 
 .footer-container {
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: auto auto;
-  /* Ajout d'une deuxième ligne */
-  gap: 40px;
-  /* Augmente l'espace entre les éléments */
+  display: flex;
+  justify-content: space-between;
+  /* Écarte les sections */
+  align-items: center;
+  /* Aligne verticalement */
+  flex-wrap: wrap;
+  /* Gère les petits écrans */
   max-width: 1200px;
   width: 100%;
   padding: 20px;
-  /* Augmente l'espace interne */
-  align-items: center;
-  /* Centre verticalement */
-  justify-content: center;
 }
 
 
@@ -194,10 +191,7 @@ body {
 
   .footer-section {
     flex: 1;
-    min-width: 250px;
-    /* Évite que les sections soient trop serrées */
-    max-width: 300px;
-    padding: 10px;
+    /* Assure un bon équilibre des colonnes */
     text-align: center;
   }
 
@@ -235,8 +229,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  /* Ajuste selon le besoin */
 }
 
 

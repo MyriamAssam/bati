@@ -230,6 +230,11 @@ body {
   margin-top: 5px;
 }
 
+.footer-section.contact {
+  margin-top: 20px;
+  /* Ajuste selon le besoin */
+}
+
 .footer-button-container {
   text-align: center;
   margin-top: 10px;

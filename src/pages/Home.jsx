@@ -71,7 +71,7 @@ const Home = () => {
                             fontWeight: "bold",
                             marginBottom: "20px",
                         }}>
-                            Bienvenue dans le site de Bâti Québec Inc. !
+                            Bienvenue dans le site de Bâti Québec Inc.
                         </h1>
                         <p style={{
                             fontSize: "clamp(14px, 2vw, 16px)",

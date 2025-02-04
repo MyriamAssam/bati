@@ -162,7 +162,7 @@ body {
   align-items: center;
   padding: 15px;
   text-align: center;
-  background-color: #8B5E3C;
+  background-color: #AD8A64;
 }
 
 .footer-container {
@@ -173,7 +173,7 @@ body {
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #8B5E3C;
+  background-color: #AD8A64;
 }
 
 @media (max-width: 768px) {
@@ -181,13 +181,13 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-color: #8B5E3C;
+    background-color: #AD8A64;
   }
 
   .footer-section {
     width: 100%;
     padding: 10px;
-    background-color: #8B5E3C;
+    background-color: #AD8A64;
   }
 
 }
@@ -251,13 +251,13 @@ body {
     align-items: center;
     text-align: center;
     gap: 20px;
-    background-color: #8B5E3C;
+    background-color: #AD8A64;
   }
 
   .footer-section {
     width: 100%;
     padding: 15px;
-    background-color: #8B5E3C;
+    background-color: #AD8A64;
   }
 }
 

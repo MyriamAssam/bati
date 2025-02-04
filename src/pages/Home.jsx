@@ -25,24 +25,20 @@ const Home = () => {
                 { }
                 <div style={{
                     width: "100%",
-                    height: "80vh",
+                    maxHeight: "80vh",
+
                     overflow: "hidden",
-                    position: "relative",
-                    maxWidth: "1200px",
-                    margin: "0 auto"
+                    position: "relative"
                 }}>
                     <img
                         src="./images/reno.jpg"
                         alt="Background"
                         style={{
                             width: "100%",
-                            height: "100%",
+                            height: "auto",
+                            maxHeight: "80vh",
                             objectFit: "cover",
-                            marginRight: "200px",
-
-                            position: "absolute",
-                            top: "0",
-                            left: "0"
+                            position: relative
                         }}
                     />
 

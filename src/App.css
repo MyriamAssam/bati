@@ -155,26 +155,31 @@ body {
 /* 🌟 Style général du footer */
 .footer {
   width: 100%;
-  max-height: 20vh;
+  min-height: auto;
+  /* Permet au footer de s'étendre si nécessaire */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
   background-color: #AD8A64;
 }
 
+
 .footer-container {
   display: flex;
   flex-wrap: wrap;
+  /* Permet aux sections de passer en colonne si nécessaire */
   justify-content: space-around;
   align-items: center;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   background-color: #AD8A64;
+  padding: 10px 0;
 }
+
 
 @media (max-width: 768px) {
   .footer-container {
@@ -185,10 +190,14 @@ body {
   }
 
   .footer-section {
-    width: 100%;
+    flex: 1;
+    min-width: 250px;
+    /* Évite que les sections soient trop serrées */
+    max-width: 300px;
     padding: 10px;
-    background-color: #AD8A64;
+    text-align: center;
   }
+
 
 }
 
@@ -249,17 +258,17 @@ body {
   .footer-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    gap: 20px;
-    background-color: #AD8A64;
+    gap: 15px;
+    padding: 15px;
   }
 
   .footer-section {
     width: 100%;
-    padding: 15px;
-    background-color: #AD8A64;
+    padding: 10px;
+    text-align: center;
   }
 }
+
 
 
 

@@ -17,13 +17,13 @@ const Header = () => {
             </button>
 
             {/* Menu de navigation */}
-            <nav className={menuOpen ? "menu-open" : "menu-closed"}>
+            <nav className={menuOpen ? "menu-open" : ""}>
                 <ul className="menuListStyle">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">À propos</Link></li>
-                    <li><Link to="/qualifications">Qualifications</Link></li>
-                    <li><Link to="/contact">Contact</Link></li>
-                    <li><Link to="/rdv">Rendez-vous</Link></li>
+                    <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>À propos</Link></li>
+                    <li><Link to="/qualifications" onClick={() => setMenuOpen(false)}>Qualifications</Link></li>
+                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+                    <li><Link to="/rdv" onClick={() => setMenuOpen(false)}>Rendez-vous</Link></li>
                 </ul>
             </nav>
         </header>

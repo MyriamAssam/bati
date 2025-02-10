@@ -113,9 +113,9 @@ const Contact = () => {
 const fieldStyle = {
     marginBottom: "15px"
 };
+
 const inputStyle = {
     width: "100%",
-    maxWidth: "400px",
     padding: "8px",
     marginTop: "5px",
     borderRadius: "5px",

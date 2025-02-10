@@ -264,7 +264,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* Uniformiser les formulaires Contact et RDV */
 .form-container {
   max-width: 800px;
   width: 90%;
@@ -299,6 +298,7 @@ main {
   cursor: pointer;
   margin-top: 10px;
 }
+
 
 /* ✅ Ajustement mobile */
 @media (max-width: 768px) {

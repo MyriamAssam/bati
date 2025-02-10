@@ -78,11 +78,29 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    width: 100%;
+    /* Assure une largeur adaptée */
+    padding: 15px;
+  }
+
   .text-on-image {
     width: 90%;
     max-width: 500px;
     padding: 15px;
     text-align: center;
+
+  }
+
+  .menuListStyle {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer-container {
+    width: 100%;
+    padding: 10px;
   }
 
   .text-on-image h1 {
@@ -161,6 +179,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .footer-container {

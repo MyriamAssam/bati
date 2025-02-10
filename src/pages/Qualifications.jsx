@@ -1,6 +1,6 @@
 const Qualifications = () => {
     return (
-        <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "800px", width: "200vw", color: "black", padding: "20px" }}>
+        <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "100%", width: "90%", padding: "20px", color: "black" }}>
             <h2 className="fade-in">Qualifications</h2>
             <h3 className="fade-in">Catégorie entrepreneur général</h3>
             <ul className="fade-in">

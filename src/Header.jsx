@@ -62,6 +62,8 @@ const menuStyle = {
 const menuListStyle = {
     listStyle: "none",
     display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
     gap: "20px",
     margin: 0,
     padding: 0

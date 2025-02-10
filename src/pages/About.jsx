@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "800px", width: "100vw", padding: "20px", color: "black" }}>
+        <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "100%", width: "90%", padding: "20px", color: "black" }}>
             <h2 className="fade-in">À propos</h2>
             <h3 className="fade-in">La première entreprise de construction et de rénovation au Québec</h3>
             <p className="fade-in">

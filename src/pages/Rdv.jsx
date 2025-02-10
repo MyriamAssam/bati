@@ -119,14 +119,7 @@ const Rdv = () => {
 };
 
 
-const formStyle = {
-    maxWidth: "800px",
-    color: "black",
-    width: "90%",
-    margin: "0 auto",
-    textAlign: "left",
-    padding: "20px"
-};
+c
 
 const fieldStyle = {
     marginBottom: "15px"

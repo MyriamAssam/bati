@@ -79,12 +79,19 @@ nav {
   nav {
     flex-direction: column;
     align-items: center;
+    background-color: #AD8A64;
   }
 
   .menuListStyle {
     flex-direction: column;
     text-align: center;
     padding-top: 10px;
+  }
+
+  .menuListStyle li {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -136,7 +143,6 @@ main {
   height: auto;
   margin-bottom: 10px;
   margin-top: -10px;
-  /* ✅ Correction pour bien aligner le logo */
 }
 
 /* ✅ Ajustement mobile */

@@ -112,7 +112,6 @@ nav {
 
 
 
-/* ✅ Correction du Menu Mobile */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -120,24 +119,23 @@ nav {
     width: 100%;
     position: absolute;
     top: 80px;
-    /* Décalage pour ne pas chevaucher le header */
+    /* Décalage sous le header */
     left: 0;
     background-color: #AD8A64;
     z-index: 999;
-    /* Assure qu'il est au-dessus des autres éléments */
+    display: none;
+    /* Caché par défaut */
+  }
+
+  .menu-open {
+    display: flex !important;
+    /* S'assurer qu'il s'affiche */
   }
 
   .menuListStyle {
     flex-direction: column;
     width: 100%;
     text-align: center;
-    display: none;
-    /* Caché par défaut */
-  }
-
-  .menu-open .menuListStyle {
-    display: flex;
-    /* Afficher quand le menu est ouvert */
   }
 
   .menuListStyle li {
@@ -158,6 +156,7 @@ nav {
     z-index: 1001;
   }
 }
+
 
 
 

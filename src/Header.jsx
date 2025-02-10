@@ -5,6 +5,9 @@ import './App.css';
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    // Fonction pour fermer le menu au clic
+    const closeMenu = () => setMenuOpen(false);
+
     return (
         <header>
             <div className="logo-container">
@@ -19,11 +22,11 @@ const Header = () => {
             {/* Menu de navigation */}
             <nav className={menuOpen ? "menu-open" : ""}>
                 <ul className="menuListStyle">
-                    <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
-                    <li><Link to="/about" onClick={() => setMenuOpen(false)}>À propos</Link></li>
-                    <li><Link to="/qualifications" onClick={() => setMenuOpen(false)}>Qualifications</Link></li>
-                    <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-                    <li><Link to="/rdv" onClick={() => setMenuOpen(false)}>Rendez-vous</Link></li>
+                    <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                    <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
+                    <li><Link to="/qualifications" onClick={closeMenu}>Qualifications</Link></li>
+                    <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+                    <li><Link to="/rdv" onClick={closeMenu}>Rendez-vous</Link></li>
                 </ul>
             </nav>
         </header>

@@ -61,7 +61,7 @@ const Contact = () => {
 
 
     return (
-        <form className="fade-in" onSubmit={handleSubmit} style={formStyle}>
+        <form className="form-container fade-in" onSubmit={handleSubmit} >
             <h2>Contactez-nous!</h2>
 
             <div style={{ marginBottom: "15px" }}>
@@ -147,14 +147,7 @@ const inputStyle = {
     border: "1px solid #ccc",
     fontSize: "16px"
 };
-const formStyle = {
-    maxWidth: "800px",
-    color: "black",
-    width: "90%",
-    margin: "0 auto",
-    textAlign: "left",
-    padding: "20px"
-};
+
 const buttonStyle = {
     backgroundColor: "#AD8A64",
     color: "white",

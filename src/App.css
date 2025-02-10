@@ -1,4 +1,4 @@
-/* 🌟 Ajustement global */
+/* ✅ Ajustement global */
 #root {
   display: flex;
   flex-direction: column;
@@ -49,6 +49,8 @@ nav {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
+  background-color: #AD8A64;
+  /* Ajout pour éviter l'effet transparent */
 }
 
 .menuListStyle {
@@ -156,9 +158,6 @@ main {
     margin-top: 20px;
   }
 }
-
-
-
 
 
 .read-the-docs {

@@ -1,16 +1,14 @@
 import { useNavigate } from "react-router-dom";
-import "./App.css";
-
+import './App.css';
 const Footer = () => {
     const navigate = useNavigate();
 
     return (
         <footer className="footer">
             <div className="footer-container">
-
                 {/* 🏢 Section Entreprise */}
                 <div className="footer-section">
-                    <img src="/images/logoBati.jpg" alt="Logo Bâti Québec" width="130" height="130" />
+                    <img src="/images/logoBati.jpg" alt="Logo Bâti Québec" />
                     <h3>Bâti Québec Inc.</h3>
                     <p>CP 82 NDG, Montréal, Québec H4A-3P4</p>
                 </div>
@@ -18,9 +16,9 @@ const Footer = () => {
                 {/* 📞 Section Contact */}
                 <div className="footer-section">
                     <h3>Nous Contacter</h3>
-                    <p><i className="fas fa-phone"></i> (514) 992-8595</p>
-                    <p><i className="fas fa-envelope"></i> <a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
-                    <p><i className="fas fa-id-badge"></i> RBQ : 5587-0471-01</p>
+                    <p>(514) 992-8595</p>
+                    <p><a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
+                    <p>RBQ : 5587-0471-01</p>
                 </div>
 
                 {/* 💬 Section Action */}
@@ -40,4 +38,4 @@ const Footer = () => {
     );
 };
 
-export default Footer; 
+export default Footer;

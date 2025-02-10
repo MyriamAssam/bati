@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Qualifications from "./pages/Qualifications";
 import Contact from "./pages/Contact";
 import Rdv from "./pages/Rdv";
+
 function App() {
   return (
     <Router>
@@ -19,7 +20,7 @@ function App() {
         maxWidth: "100%"
       }}>
         <Header />
-        <main style={{ flex: 1, padding: "20px" }}>
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -28,14 +29,12 @@ function App() {
             <Route path="/rdv" element={<Rdv />} />
           </Routes>
         </main>
-        <Footer /> { }
+        <Footer />
       </div>
     </Router>
   );
 }
 
-
 export default App;
-
 
 

@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import './App.css';
 
 const Header = () => {
+    useEffect(() => {
+        console.log("Largeur de l'écran : " + window.innerWidth + "px");
+    }, []);
     return (
         <header>
             {/* 📌 Logo bien positionné */}

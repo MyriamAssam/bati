@@ -47,6 +47,7 @@ header {
 
 /* ✅ Correction du Menu Desktop */
 /* ✅ Assurez-vous que le menu ne se coupe pas sur mobile */
+/* ✅ Correction du Menu */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -55,30 +56,25 @@ nav {
   width: 100%;
   background-color: #AD8A64;
   padding: 10px 0;
-  /* Ajout pour donner un peu d'espace */
 }
-
-
 
 .menuListStyle {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  /* Assure un bon espacement */
   align-items: center;
   list-style: none;
   padding: 0;
   margin: 0;
   width: 100%;
-  /* Assurez-vous que la liste prend bien toute la largeur */
 }
 
-
-
 .menuListStyle li {
-  padding: 10px 15px;
-  flex: 1;
-  /* Permet aux éléments de s'ajuster dynamiquement */
+  padding: 10px;
   text-align: center;
+  flex-grow: 1;
+  /* Permet aux liens de bien s’adapter */
 }
 
 .menuListStyle a {
@@ -87,8 +83,8 @@ nav {
   font-size: 16px;
   font-weight: bold;
   display: block;
+  width: 100%;
 }
-
 
 /* ✅ Correction du Menu Mobile */
 @media (max-width: 768px) {
@@ -115,6 +111,22 @@ nav {
     display: block;
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menuListStyle {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menuListStyle li {
+    flex: 1 1 auto;
+    min-width: 120px;
+    /* Évite que les éléments se superposent */
   }
 }
 

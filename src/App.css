@@ -46,8 +46,11 @@ header {
 }
 
 /* ✅ Correction du Menu Desktop */
+/* ✅ Assurez-vous que le menu ne se coupe pas sur mobile */
 nav {
   display: flex;
+  flex-wrap: wrap;
+  /* Permet aux éléments de passer à la ligne si nécessaire */
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -55,55 +58,53 @@ nav {
 }
 
 .menuListStyle {
-  list-style: none;
   display: flex;
-  justify-content: space-evenly;
-  /* ✅ Évite le chevauchement */
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-/* ✅ Correction des liens */
 .menuListStyle li {
   padding: 10px 15px;
-  /* ✅ Ajuste l'espacement */
+  flex: 1;
+  /* Permet aux éléments de s'ajuster dynamiquement */
+  text-align: center;
 }
 
 .menuListStyle a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   display: block;
-  padding: 10px 15px;
 }
+
 
 /* ✅ Correction du Menu Mobile */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .menuListStyle {
     flex-direction: column;
     width: 100%;
-    padding: 10px 0;
   }
 
   .menuListStyle li {
     width: 100%;
-    text-align: center;
+    padding: 12px;
   }
 
   .menuListStyle a {
     font-size: 16px;
-    padding: 12px;
+    padding: 10px;
   }
 }
+
 
 /* ✅ Correction du Main */
 main {

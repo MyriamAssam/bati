@@ -10,7 +10,7 @@ const Header = () => {
             </div>
 
             {/* 📌 Navigation avec toutes les pages */}
-            <nav>
+            <nav style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
                 <ul className="menuListStyle">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">À propos</Link></li>
@@ -19,6 +19,7 @@ const Header = () => {
                     <li><Link to="/rdv">Rendez-vous</Link></li>
                 </ul>
             </nav>
+
         </header>
     );
 };

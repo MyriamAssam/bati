@@ -33,6 +33,7 @@ header {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* ✅ Logo */
 .logo-container {
   display: flex;
   align-items: center;
@@ -44,8 +45,7 @@ header {
   margin-left: 10px;
 }
 
-/* ✅ Correction du Menu */
-/* ✅ Correction du Menu */
+/* ✅ Correction du Menu (Desktop & Mobile) */
 nav {
   display: flex;
   justify-content: center;
@@ -55,34 +55,33 @@ nav {
   /* Évite l'effet transparent */
 }
 
+/* ✅ Liste du menu */
 .menuListStyle {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* Ajustement pour un bon espacement */
   align-items: center;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
+/* ✅ Ajustement des liens */
 .menuListStyle li {
   flex-grow: 1;
-  /* Permet aux liens de s'ajuster dynamiquement */
   text-align: center;
-  padding: 10px 20px;
-  /* Ajustement des espaces */
+  padding: 12px;
 }
 
 .menuListStyle a {
   color: white;
   text-decoration: none;
-  font-size: 18px;
-  /* Légèrement agrandi pour meilleure visibilité */
+  font-size: 16px;
   font-weight: bold;
   display: block;
   padding: 12px;
+  width: 100%;
 }
 
 /* ✅ Correction du Menu Mobile */
@@ -90,12 +89,12 @@ nav {
   nav {
     flex-direction: column;
     align-items: center;
-    width: 100%;
   }
 
   .menuListStyle {
     flex-direction: column;
     width: 100%;
+    padding: 0;
   }
 
   .menuListStyle li {
@@ -105,57 +104,7 @@ nav {
 
   .menuListStyle a {
     font-size: 16px;
-    /* Réduction pour éviter le chevauchement */
-    padding: 10px 0;
-  }
-}
-
-/* ✅ Correction du Menu Mobile */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    background-color: #AD8A64;
-  }
-
-  .menuListStyle {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-  }
-
-  .menuListStyle li {
-    padding: 15px;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-.menuListStyle a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* ✅ Correction du Menu Mobile */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    background-color: #AD8A64;
-  }
-
-  .menuListStyle {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 10px;
-  }
-
-  .menuListStyle li {
-    padding: 15px;
-    width: 100%;
-    text-align: center;
+    padding: 10px;
   }
 }
 
@@ -206,7 +155,6 @@ main {
   width: 120px;
   height: auto;
   margin-bottom: 10px;
-  margin-top: -10px;
 }
 
 /* ✅ Ajustement mobile */
@@ -228,7 +176,6 @@ main {
     margin-top: 20px;
   }
 }
-
 
 .read-the-docs {
   color: #888;

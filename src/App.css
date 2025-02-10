@@ -15,6 +15,22 @@ body {
   background-color: #ECE2D0;
 }
 
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.head-text {
+  position: relative;
+}
+
 /* ✅ Correction du Header */
 header {
   background-color: #AD8A64;
@@ -220,6 +236,20 @@ main {
   align-items: center;
   text-align: center;
   margin-top: 20px;
+}
+
+.footer-section .footer-link {
+
+  color: #8B5E3C;
+
+
+}
+
+.footer-button {
+
+  background-color: #8B5E3C;
+
+
 }
 
 .footer-section img {

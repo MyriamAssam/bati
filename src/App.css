@@ -47,10 +47,9 @@ header {
 /* ✅ Correction du Menu */
 nav {
   display: flex;
-  justify-content: flex-end;
-  flex-grow: 1;
-  background-color: #AD8A64;
-  /* Ajout pour éviter l'effet transparent */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .menuListStyle {
@@ -58,13 +57,48 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 15px;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .menuListStyle li {
+  flex: 1;
+  text-align: center;
   padding: 10px;
+}
+
+.menuListStyle a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+/* ✅ Correction du Menu Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    background-color: #AD8A64;
+  }
+
+  .menuListStyle {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menuListStyle li {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .menuListStyle a {

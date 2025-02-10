@@ -27,6 +27,12 @@ body {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+
 .head-text {
   position: relative;
 }
@@ -240,14 +246,14 @@ main {
 
 .footer-section .footer-link {
 
-  color: #8B5E3C;
+  color: #ECE2D0;
 
 
 }
 
 .footer-button {
 
-  background-color: #8B5E3C;
+  background-color: #ECE2D0;
 
 
 }

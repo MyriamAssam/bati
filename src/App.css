@@ -45,43 +45,39 @@ header {
   margin-left: 10px;
 }
 
-/* ✅ Correction du Menu (Desktop & Mobile) */
+/* ✅ Correction du Menu Desktop */
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: #AD8A64;
-  /* Évite l'effet transparent */
 }
 
-/* ✅ Liste du menu */
 .menuListStyle {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  /* ✅ Évite le chevauchement */
   align-items: center;
-  width: 100%;
-  margin: 0;
+  width: 80%;
+  margin: 0 auto;
   padding: 0;
 }
 
-/* ✅ Ajustement des liens */
+/* ✅ Correction des liens */
 .menuListStyle li {
-  flex-grow: 1;
-  text-align: center;
-  padding: 12px;
+  padding: 10px 15px;
+  /* ✅ Ajuste l'espacement */
 }
 
 .menuListStyle a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   display: block;
-  padding: 12px;
-  width: 100%;
+  padding: 10px 15px;
 }
 
 /* ✅ Correction du Menu Mobile */
@@ -89,22 +85,23 @@ nav {
   nav {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .menuListStyle {
     flex-direction: column;
     width: 100%;
-    padding: 0;
+    padding: 10px 0;
   }
 
   .menuListStyle li {
     width: 100%;
-    padding: 12px;
+    text-align: center;
   }
 
   .menuListStyle a {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
   }
 }
 
@@ -115,7 +112,7 @@ main {
   text-align: center;
   position: relative;
   min-height: 100vh;
-  margin-top: 80px;
+  margin-top: 90px;
   /* ✅ Évite le chevauchement du header */
 }
 

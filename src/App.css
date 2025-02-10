@@ -50,6 +50,8 @@ nav {
   justify-content: center;
   align-items: center;
   width: 100%;
+  background-color: #AD8A64;
+  /* Évite l'effet transparent */
 }
 
 .menuListStyle {
@@ -68,6 +70,36 @@ nav {
   flex: 1;
   text-align: center;
   padding: 10px;
+}
+
+.menuListStyle a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+/* ✅ Correction du Menu Mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menuListStyle {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .menuListStyle li {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .menuListStyle a {

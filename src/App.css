@@ -332,6 +332,11 @@ header {
     padding: 15px;
   }
 
+  .footer-section img {
+    width: 80px;
+    height: auto;
+  }
+
   .footer-section {
     display: flex;
     flex-direction: column;

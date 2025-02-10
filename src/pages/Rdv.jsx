@@ -119,7 +119,7 @@ const Rdv = () => {
 };
 
 
-c
+
 
 const fieldStyle = {
     marginBottom: "15px"

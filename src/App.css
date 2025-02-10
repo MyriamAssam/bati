@@ -2,7 +2,9 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   text-align: center;
 }
 
@@ -11,6 +13,14 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+}
+
+main {
+  flex: 1;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
 }
 
 .logo:hover {
@@ -52,6 +62,9 @@ body {
   width: 100%;
   max-width: 100%;
   background-color: #ECE2D0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 * {
@@ -93,8 +106,9 @@ body {
   }
 
   .menuListStyle {
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
   }
 
@@ -127,7 +141,7 @@ body {
 
   div {
     width: 100%;
-    height: 80vh;
+    min-height: auto;
 
     overflow: hidden;
     position: relative;
@@ -135,8 +149,8 @@ body {
 
   img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
@@ -169,8 +183,6 @@ body {
 }
 
 
-/* 🌟 Style général du footer */
-/* 🌟 Style général du footer */
 .footer {
   width: 100%;
   padding: 20px 0;
@@ -179,7 +191,8 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
 }
 
 .footer-container {
@@ -214,11 +227,9 @@ body {
   /* Ajustement fin */
 }
 
-
-
-
-
-
+header {
+  overflow-x: hidden;
+}
 
 
 
@@ -265,10 +276,6 @@ body {
   text-decoration: none;
   margin-top: 5px;
 }
-
-
-
-
 
 
 .footer-button-container {
@@ -333,8 +340,6 @@ body {
     margin-top: 20px;
   }
 }
-
-
 
 
 .read-the-docs {

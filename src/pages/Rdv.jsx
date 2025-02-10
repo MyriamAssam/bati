@@ -133,14 +133,7 @@ const inputStyle = {
     border: "1px solid #ccc",
     fontSize: "16px"
 };
-const formStyle = {
-    maxWidth: "800px",
-    color: "black",
-    width: "90%",
-    margin: "0 auto",
-    textAlign: "left",
-    padding: "20px"
-};
+
 const buttonStyle = {
     backgroundColor: "#AD8A64",
     color: "white",

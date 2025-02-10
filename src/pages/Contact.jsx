@@ -64,53 +64,28 @@ const Contact = () => {
         <form className="form-container fade-in" onSubmit={handleSubmit} >
             <h2>Contactez-nous!</h2>
 
-            <div style={{ marginBottom: "15px" }}>
+            <div style={fieldStyle}>
                 <label>Prénom :</label>
-                <input
-                    type="text"
-                    color="black"
-                    name="firstName"
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    required
-                    style={inputStyle}
-                />
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
             </div>
 
-            <div style={{ marginBottom: "15px" }}>
+            <div style={fieldStyle}>
                 <label>Nom :</label>
-                <input
-                    type="text"
-                    name="lastName"
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    required
-                    style={inputStyle}
-                />
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
             </div>
 
-            <div style={{ marginBottom: "15px" }}>
-                <label>Courriel :</label>
-                <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    style={inputStyle}
-                />
+            <div style={fieldStyle}>
+                <label>Email :</label>
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
             </div>
 
-            <div style={{ marginBottom: "15px" }}>
+
+
+            <div style={fieldStyle}>
                 <label>Description :</label>
-                <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                    rows="4"
-                    style={{ ...inputStyle, height: "100px" }}
-                />
+                <textarea name="description" value={formData.description} onChange={handleChange} rows="4" style={{ ...inputStyle, height: "100px" }} />
             </div>
+
             <div style={fieldStyle}>
                 <label>Ajoutez des photos ou vidéos :</label>
                 <input type="file" multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />

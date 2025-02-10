@@ -45,6 +45,7 @@ header {
 }
 
 /* ✅ Correction du Menu */
+/* ✅ Correction du Menu */
 nav {
   display: flex;
   justify-content: center;
@@ -58,28 +59,30 @@ nav {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
+  /* Ajustement pour un bon espacement */
   align-items: center;
-  gap: 15px;
   width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .menuListStyle li {
-  flex: 1;
+  flex-grow: 1;
+  /* Permet aux liens de s'ajuster dynamiquement */
   text-align: center;
-  padding: 10px;
+  padding: 10px 20px;
+  /* Ajustement des espaces */
 }
 
 .menuListStyle a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
+  /* Légèrement agrandi pour meilleure visibilité */
   font-weight: bold;
   display: block;
-  width: 100%;
-  padding: 10px 15px;
+  padding: 12px;
 }
 
 /* ✅ Correction du Menu Mobile */
@@ -87,29 +90,24 @@ nav {
   nav {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .menuListStyle {
     flex-direction: column;
-    text-align: center;
     width: 100%;
   }
 
   .menuListStyle li {
-    padding: 15px;
     width: 100%;
-    text-align: center;
+    padding: 12px;
   }
-}
 
-.menuListStyle a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
+  .menuListStyle a {
+    font-size: 16px;
+    /* Réduction pour éviter le chevauchement */
+    padding: 10px 0;
+  }
 }
 
 /* ✅ Correction du Menu Mobile */

@@ -50,21 +50,26 @@ header {
 nav {
   display: flex;
   flex-wrap: wrap;
-  /* Permet aux éléments de passer à la ligne si nécessaire */
+  /* Ajout pour éviter le chevauchement */
   justify-content: center;
   align-items: center;
   width: 100%;
   background-color: #AD8A64;
 }
 
+
 .menuListStyle {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  /* Centrer les liens */
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 100%;
+  /* Ajout pour assurer une largeur correcte */
 }
+
 
 .menuListStyle li {
   padding: 10px 15px;
@@ -96,14 +101,16 @@ nav {
 
   .menuListStyle li {
     width: 100%;
-    padding: 12px;
+    text-align: center;
+    padding: 12px 0;
   }
 
   .menuListStyle a {
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
   }
 }
+
 
 
 /* ✅ Correction du Main */

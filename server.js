@@ -103,7 +103,12 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
 });
 
 // Servir les fichiers statiques depuis "dist" après les routes API
-app.use(express.static(path.join(path.resolve(), "dist")));
+app.use(cors({
+    origin: "*", // Remplace "*" par ton domaine si nécessaire
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.get("*", (req, res) => {
     res.sendFile(path.resolve("dist", "index.html"));
 });

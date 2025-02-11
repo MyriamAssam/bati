@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../App.css';
-
+import { useTranslation } from "react-i18next";
+const { t } = useTranslation();
 const Contact = () => {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -65,21 +66,21 @@ const Contact = () => {
 
     return (
         <form className="form-container fade-in" onSubmit={handleSubmit} >
-            <h2>Contactez-nous!</h2>
+            <h2>{t("contact")}</h2>
 
             <div style={fieldStyle}>
                 <label>Prénom :</label>
-                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
+                <input type="text" placeholder={t("first_name")} name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Nom :</label>
-                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
+                <input type="text" placeholder={t("last_name")} name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Email :</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
+                <input type="email" placeholder={t("email")} name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
@@ -89,11 +90,11 @@ const Contact = () => {
 
             <div style={fieldStyle}>
                 <label>Ajoutez des photos ou vidéos :</label>
-                <input type="file" multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
+                <input type="file" placeholder={t("fichiers")} multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
             </div>
 
             <button type="submit" style={buttonStyle}>
-                Send
+                {t("envoi")}
             </button>
 
             {message && (

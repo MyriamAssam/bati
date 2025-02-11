@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import './App.css';
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+    const { t, i18n } = useTranslation();
 
-    // Fonction pour fermer le menu au clic
-    const closeMenu = () => setMenuOpen(false);
+    const changeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+    };
 
     return (
         <header>
@@ -14,23 +16,24 @@ const Header = () => {
                 <img src="/images/logoBati.jpg" alt="Logo" className="logo" />
             </div>
 
-            {/* Bouton menu pour mobile */}
-            <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
-                ☰
-            </button>
-
-            {/* Menu de navigation */}
-            <nav className={menuOpen ? "menu-open" : ""}>
-                <ul className="menuListStyle">
-                    <li><Link to="/" onClick={closeMenu}>Home</Link></li>
-                    <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
-                    <li><Link to="/qualifications" onClick={closeMenu}>Qualifications</Link></li>
-                    <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
-                    <li><Link to="/rdv" onClick={closeMenu}>Rendez-vous</Link></li>
+            <nav>
+                <ul>
+                    <li><Link to="/">{t("home")}</Link></li>
+                    <li><Link to="/about">{t("A_propos")}</Link></li>
+                    <li><Link to="/qualifications">Qualifications</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
+                    <li><Link to="/rdv">{t("rdv")}</Link></li>
                 </ul>
             </nav>
+
+            {/* 🔥 Ajout des boutons de langue */}
+            <div style={{ marginLeft: "20px" }}>
+                <button onClick={() => changeLanguage("fr")}>🇫🇷 Français</button>
+                <button onClick={() => changeLanguage("en")}>🇬🇧 English</button>
+            </div>
         </header>
     );
 };
 
 export default Header;
+

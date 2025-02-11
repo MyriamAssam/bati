@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import './App.css';
-
+import { useTranslation } from "react-i18next";
+const { t } = useTranslation();
 const Footer = () => {
     const navigate = useNavigate();
 
@@ -16,7 +17,7 @@ const Footer = () => {
 
                 {/* 📞 Section Contact */}
                 <div className="footer-section">
-                    <h3>Nous Contacter</h3>
+                    <h3>Contact</h3>
                     <p>(514) 992-8595</p>
                     <p><a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
                     <p>RBQ : 5587-0471-01</p>
@@ -24,16 +25,16 @@ const Footer = () => {
 
                 {/* 💬 Section Action */}
                 <div className="footer-section">
-                    <h3>Des Questions ?</h3>
+                    <h3>{t("questions")}</h3>
                     <button onClick={() => navigate("/contact")} className="footer-button">
-                        Contactez-nous
+                        {t("contactfooter")}
                     </button>
                 </div>
             </div>
 
             {/* Copyright */}
             <div className="footer-copyright">
-                <p>© 2024 Bâti Québec Inc. Tous droits réservés.</p>
+                <p>{t("copyright")}</p>
             </div>
         </footer>
     );

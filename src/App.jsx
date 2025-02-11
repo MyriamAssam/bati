@@ -8,9 +8,14 @@ import About from "./pages/About";
 import Qualifications from "./pages/Qualifications";
 import Contact from "./pages/Contact";
 import Rdv from "./pages/Rdv";
+import { useTranslation } from "react-i18next";
 
-function App() {
-  return (
+const App = () => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  }; return (
     <Router>
       <div style={{
         display: "flex",
@@ -28,6 +33,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/rdv" element={<Rdv />} />
           </Routes>
+
         </main>
         <Footer />
       </div>

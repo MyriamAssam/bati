@@ -1,6 +1,7 @@
 import { useState } from "react";
 import '../App.css';
-
+import { useTranslation } from "react-i18next";
+const { t } = useTranslation();
 const Rdv = () => {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -71,27 +72,27 @@ const Rdv = () => {
 
             <div style={fieldStyle}>
                 <label>Prénom :</label>
-                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
+                <input type="text" placeholder={t("first_name")} name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Nom :</label>
-                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
+                <input type="text" placeholder={t("last_name")} name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Email :</label>
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
+                <input type="email" name="email" placeholder={t("email")} value={formData.email} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Date du rendez-vous :</label>
-                <input type="date" name="date" value={formData.date} onChange={handleChange} required style={inputStyle} />
+                <input type="date" name="date" placeholder={t("date")} value={formData.date} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
                 <label>Heure du rendez-vous :</label>
-                <input type="time" name="time" value={formData.time} onChange={handleChange} required style={inputStyle} />
+                <input type="time" name="time" placeholder={t("heure")} value={formData.time} onChange={handleChange} required style={inputStyle} />
             </div>
 
             <div style={fieldStyle}>
@@ -101,10 +102,10 @@ const Rdv = () => {
 
             <div style={fieldStyle}>
                 <label>Ajoutez des photos ou vidéos :</label>
-                <input type="file" multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
+                <input type="file" placeholder={t("fichiers")} multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
             </div>
 
-            <button type="submit" style={buttonStyle}>Send</button>
+            <button type="submit" style={buttonStyle}>{t("envoi")}</button>
 
             {message && (
                 <p style={{

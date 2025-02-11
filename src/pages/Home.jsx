@@ -3,6 +3,8 @@ import Header from "../Header.jsx";
 import { FiHome } from "react-icons/fi";
 import { FaHardHat, FaBuilding } from "react-icons/fa";
 import '../App.css';
+import { useTranslation } from "react-i18next";
+const { t } = useTranslation();
 
 const Home = () => {
     const navigate = useNavigate();
@@ -71,14 +73,16 @@ const Home = () => {
                             fontWeight: "bold",
                             marginBottom: "20px",
                         }}>
-                            Bienvenue dans le site de Bâti Québec Inc.
+                            {t("welcome")}
+
                         </h1>
                         <p style={{
                             fontSize: "clamp(14px, 2vw, 16px)",
                             lineHeight: "1.7",
                             marginBottom: "65px"
                         }}>
-                            Nous sommes une petite entreprise privée fournissant toutes les phases de construction à nos clients propriétaires. Nous vous traiterons, vous et votre famille, de la conception à l'inspection finale, avec respect du début à la fin. Qu'il s'agisse de rénover une petite salle de bain ou de construire une maison entière, nous somme une compagnie de confiance.
+                            {t("descriptionEntreprise")}
+
                         </p>
 
                         <button onClick={() => navigate("/rdv")}
@@ -93,7 +97,8 @@ const Home = () => {
                                 border: "none",
                                 cursor: "pointer",
                             }}>
-                            Prenez rendez-vous avec nous
+                            {t("rendezvous")}
+
                         </button>
                     </div>
 
@@ -107,7 +112,7 @@ const Home = () => {
                     textAlign: "center",
                     marginTop: "40px"
                 }}>
-                    <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>SERVICES</h2>
+                    <h2 style={{ fontSize: "30px", marginBottom: "35px" }}> {t("services")}</h2>
 
                     <div className="services-container" style={{
                         display: "flex",
@@ -120,22 +125,22 @@ const Home = () => {
                         { }
                         <div style={{ maxWidth: "300px", textAlign: "center" }}>
                             <FaHardHat size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>OWNER OCCUPIED PROJECTS</h3>
-                            <p>We specialize in owner-occupied projects, ensuring minimal disruption to your daily life while maintaining the highest quality standards.</p>
+                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services2")}</h3>
+                            <p>{t("services3")}</p>
                         </div>
 
                         { }
                         <div style={{ maxWidth: "300px", textAlign: "center" }}>
                             <FiHome size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>CONSTRUCTION</h3>
-                            <p>From foundation to finishing touches, we bring your dream home to life with expert craftsmanship and attention to detail.</p>
+                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services4")}</h3>
+                            <p>{t("services5")}</p>
                         </div>
 
                         { }
                         <div style={{ maxWidth: "300px", textAlign: "center" }}>
                             <FaBuilding size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>RENOVATION</h3>
-                            <p>Whether upgrading a single room or a complete home renovation, we provide seamless, high-quality remodeling services tailored to your needs.</p>
+                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services6")}</h3>
+                            <p>{t("services7")}</p>
                         </div>
 
                     </div>

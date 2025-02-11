@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 const Header = () => {
     const { t, i18n } = useTranslation();
 
-    console.log("Header loaded - Current Language:", i18n.language); // ✅ Test pour voir si la langue est bien chargée
-
-    const changeLanguage = (lang) => {
-        i18n.changeLanguage(lang);
-    };
+    if (!t) {
+        return <div>Loading...</div>; // ✅ Évite l'erreur si `useContext` est null
+    }
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
@@ -29,8 +27,8 @@ const Header = () => {
                 </nav>
 
                 <div style={{ marginLeft: "20px" }}>
-                    <button onClick={() => changeLanguage("fr")}>🇫🇷 Français</button>
-                    <button onClick={() => changeLanguage("en")}>🇬🇧 English</button>
+                    <button onClick={() => i18n.changeLanguage("fr")}>🇫🇷 Français</button>
+                    <button onClick={() => i18n.changeLanguage("en")}>🇬🇧 English</button>
                 </div>
             </header>
         </Suspense>

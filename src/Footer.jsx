@@ -4,7 +4,11 @@ import { useTranslation } from "react-i18next";
 
 const Footer = () => {
     const navigate = useNavigate();
-    const { t } = useTranslation(); // ✅ Doit être dans le composant
+    const { t, i18n } = useTranslation(); // ✅ Correct
+
+    if (!t) {
+        return <div>Loading...</div>; // ✅ Évite l'erreur si `useContext` est null
+    }
 
     return (
         <footer className="footer">

@@ -1,7 +1,5 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-
 
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -11,23 +9,20 @@ import Qualifications from "./pages/Qualifications";
 import Contact from "./pages/Contact";
 import Rdv from "./pages/Rdv";
 
-const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/about", element: <About /> },
-  { path: "/qualifications", element: <Qualifications /> },
-  { path: "/contact", element: <Contact /> },
-  { path: "/rdv", element: <Rdv /> },
-]);
-
 const App = () => (
   <Suspense fallback={<div>Loading translations...</div>}>
-    <Header />
-    <RouterProvider router={router} />
-    <Footer />
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/qualifications" element={<Qualifications />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/rdv" element={<Rdv />} />
+      </Routes>
+      <Footer />
+    </Router>
   </Suspense>
 );
 
-
-
 export default App;
-

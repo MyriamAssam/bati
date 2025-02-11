@@ -1,8 +1,9 @@
 import { useState } from "react";
 import '../App.css';
 import { useTranslation } from "react-i18next";
-const { t } = useTranslation();
+
 const Rdv = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",

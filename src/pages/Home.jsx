@@ -4,9 +4,10 @@ import { FiHome } from "react-icons/fi";
 import { FaHardHat, FaBuilding } from "react-icons/fa";
 import '../App.css';
 import { useTranslation } from "react-i18next";
-const { t } = useTranslation();
+
 
 const Home = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     return (

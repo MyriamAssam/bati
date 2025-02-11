@@ -1,7 +1,8 @@
 import '../App.css';
 import { useTranslation } from "react-i18next";
-const { t } = useTranslation();
+
 const Qualifications = () => {
+    const { t } = useTranslation();
     return (
         <div style={{ textAlign: "left", margin: "0 auto", maxWidth: "100%", width: "90%", padding: "20px", color: "black" }}>
             <h2 className="fade-in">Qualifications</h2>

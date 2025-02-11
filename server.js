@@ -92,7 +92,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
         // Envoi des emails
         await Promise.all([
             sendEmail(email, "Confirmation de Rendez-vous - Bâti Québec", "", `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`),
-            sendEmail("myriamassamea@hotmail.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
+            sendEmail("mimimontmo2@gmail.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
         ]);
 
         res.status(201).json({ message: "✅ RDV enregistré et confirmé par email." });

@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 const Header = () => {
     const { t, i18n } = useTranslation();
 
+    console.log("Header loaded - Current Language:", i18n.language); // ✅ Test pour voir si la langue est bien chargée
+
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang);
     };
 
     return (
-        <Suspense fallback={<div>Loading...</div>}> {/* ✅ Ajout du suspense */}
+        <Suspense fallback={<div>Loading...</div>}>
             <header>
                 <div className="logo-container">
                     <img src="/images/logoBati.jpg" alt="Logo" className="logo" />

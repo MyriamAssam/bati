@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { I18nextProvider } from "react-i18next"; // ✅ Importer le Provider
-import i18n from "./i18n"; // ✅ Assurer l'importation de i18n
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n"; // ✅ Import correct
 
 import Header from "./Header.jsx";
 import Footer from "./Footer.jsx";
@@ -20,13 +20,14 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => (
-  <I18nextProvider i18n={i18n}> {/* ✅ Ajout du provider */}
-    <Suspense fallback={<div>Loading translations...</div>}>
+  <Suspense fallback={<div>Loading translations...</div>}>
+    <I18nextProvider i18n={i18n}> {/* ✅ Placement correct */}
       <Header />
       <RouterProvider router={router} />
       <Footer />
-    </Suspense>
-  </I18nextProvider>
+    </I18nextProvider>
+  </Suspense>
 );
 
 export default App;
+

@@ -17,7 +17,12 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: "*", // Remplace "*" par ton domaine de frontend si nécessaire
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 app.use(express.static("uploads"));
 
@@ -107,6 +112,7 @@ app.use(express.static(path.join(path.resolve(), "dist")));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve("dist", "index.html"));
 });
+
 
 // Démarrage du serveur
 const PORT = process.env.PORT || 5000;

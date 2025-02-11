@@ -11,19 +11,16 @@ i18n
     .init({
         resources: {
             en: { translation: en },
-            fr: { translation: fr }
+            fr: { translation: fr },
         },
-        lng: localStorage.getItem("i18nextLng") || "fr", // 🔥 Sauvegarde la langue dans localStorage
+        lng: localStorage.getItem("i18nextLng") || "fr",
         fallbackLng: "en",
         interpolation: {
-            escapeValue: false
-        }
+            escapeValue: false,
+        },
     });
 
-// Sauvegarde automatique de la langue choisie
-i18n.on("languageChanged", (lng) => {
-    localStorage.setItem("i18nextLng", lng);
-});
+console.log("✅ i18n initialized:", i18n.language); // Test si i18n est bien chargé
 
 export default i18n;
 

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import '../App.css';
+
 const Contact = () => {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -8,14 +9,15 @@ const Contact = () => {
         description: "",
         files: []
     });
+
     const [message, setMessage] = useState(null);
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value,
         });
     };
-
 
     const handleFileChange = (e) => {
         const selectedFiles = Array.from(e.target.files);
@@ -39,8 +41,10 @@ const Contact = () => {
             formDataObj.append("files", file);
         });
 
+        const API_URL = import.meta.env.VITE_API_URL;  // ✅ Prend l'URL depuis .env
+
         try {
-            const response = await fetch("http://localhost:5000/api/contact", {
+            const response = await fetch(`${API_URL}/api/contact`, {  // ✅ Utilisation dynamique de l'URL
                 method: "POST",
                 body: formDataObj
             });
@@ -48,7 +52,7 @@ const Contact = () => {
             const data = await response.json();
 
             if (response.ok) {
-                setMessage({ type: "success", text: "✅ Nous vous contacterons des que possible !" });
+                setMessage({ type: "success", text: "✅ Nous vous contacterons dès que possible !" });
                 setTimeout(() => setMessage(null), 5000);
             } else {
                 setMessage({ type: "error", text: data.message || "❌ Erreur lors de l'enregistrement." });
@@ -58,7 +62,6 @@ const Contact = () => {
             setMessage({ type: "error", text: "❌ Problème de connexion avec le serveur." });
         }
     };
-
 
     return (
         <form className="form-container fade-in" onSubmit={handleSubmit} >
@@ -79,8 +82,6 @@ const Contact = () => {
                 <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
             </div>
 
-
-
             <div style={fieldStyle}>
                 <label>Description :</label>
                 <textarea name="description" value={formData.description} onChange={handleChange} rows="4" style={{ ...inputStyle, height: "100px" }} />
@@ -90,10 +91,11 @@ const Contact = () => {
                 <label>Ajoutez des photos ou vidéos :</label>
                 <input type="file" multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
             </div>
+
             <button type="submit" style={buttonStyle}>
                 Send
             </button>
-            { }
+
             {message && (
                 <p style={{
                     color: message.type === "success" ? "green" : "red",
@@ -103,11 +105,8 @@ const Contact = () => {
                     {message.text}
                 </p>
             )}
-
         </form>
-
     );
-
 };
 
 const fieldStyle = {

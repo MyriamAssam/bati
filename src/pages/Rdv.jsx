@@ -43,8 +43,10 @@ const Rdv = () => {
             formDataObj.append("files", file);
         });
 
+        const API_URL = import.meta.env.VITE_API_URL;  // ✅ Prend l'URL depuis .env
+
         try {
-            const response = await fetch("http://localhost:5000/api/rdv", {
+            const response = await fetch(`${API_URL}/api/rdv`, {  // ✅ Utilisation dynamique de l'URL
                 method: "POST",
                 body: formDataObj
             });
@@ -104,7 +106,6 @@ const Rdv = () => {
 
             <button type="submit" style={buttonStyle}>Send</button>
 
-            { }
             {message && (
                 <p style={{
                     color: message.type === "success" ? "green" : "red",
@@ -117,9 +118,6 @@ const Rdv = () => {
         </form>
     );
 };
-
-
-
 
 const fieldStyle = {
     marginBottom: "15px"
@@ -144,4 +142,4 @@ const buttonStyle = {
     cursor: "pointer"
 };
 
-export default Rdv; 
+export default Rdv;

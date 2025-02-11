@@ -112,6 +112,9 @@ app.use(express.static(path.join(path.resolve(), "dist")));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve("dist", "index.html"));
 });
+app.get("/api/health", (req, res) => {
+    res.json({ message: "✅ Serveur opérationnel !" });
+});
 
 
 // Démarrage du serveur

@@ -10,14 +10,33 @@ body,
   background-color: #ECE2D0;
 }
 
-/* ✅ Assurer que le header ne cache pas le contenu */
+/* ✅ Ajustement du header fixe */
+.header {
+  background-color: #AD8A64;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 70px;
+  /* Réduction de la hauteur */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Ajustement du contenu pour éviter qu'il soit caché sous le header */
 main {
   flex: 1;
   padding: 20px;
   text-align: center;
   position: relative;
-  margin-top: 90px;
-  /* Augmenté pour compenser la hauteur du header */
+  margin-top: 80px;
+  /* Ajusté pour correspondre à la hauteur du header */
 }
 
 /* ✅ Correction du Header */
@@ -102,34 +121,37 @@ main {
   color: white;
 }
 
-/* ✅ Footer Fixé en bas */
 .footer {
   width: 100%;
-  padding: 20px 0;
+  padding: 15px 0;
   background-color: #AD8A64;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin-top: auto;
+  /* Assure que le footer reste en bas */
 }
 
-/* ✅ Structure du Footer */
+/* ✅ Correction de la structure du footer */
 .footer-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  justify-content: space-between;
   max-width: 1200px;
   width: 100%;
-  padding: 20px;
+  padding: 10px;
   gap: 20px;
 }
 
+/* ✅ Réduction de la taille du logo dans le footer */
+.footer-section img {
+  width: 80px;
+  /* Réduction de la taille */
+  height: auto;
+  margin-bottom: 10px;
+}
+
 .footer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
@@ -179,8 +201,6 @@ main {
 
 /* ✅ Ajustement Responsive */
 @media (max-width: 768px) {
-
-  /* ✅ Adaptation du header */
   .menu-button {
     display: block;
   }
@@ -188,12 +208,12 @@ main {
   .nav {
     display: none;
     position: absolute;
-    top: 90px;
+    top: 70px;
     left: 0;
     width: 100%;
     background-color: #AD8A64;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
   }
 
@@ -206,16 +226,15 @@ main {
   }
 
   .menu-list li {
-    padding: 12px;
+    padding: 10px;
   }
 
-  /* ✅ Adaptation du Footer */
+  /* ✅ Ajustement du footer en mobile */
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    padding: 15px;
+    text-align: center;
   }
+
 
   .footer-section img {
     width: 100px;

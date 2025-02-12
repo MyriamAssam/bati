@@ -1,19 +1,31 @@
-/* ✅ Ajustement global */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 #root {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  min-height: 100vh;
 }
 
-html,
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-color: #ECE2D0;
+main {
+  flex: 1;
 }
+
+.footer {
+  width: 100%;
+  background-color: #AD8A64;
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  margin-top: auto;
+}
+
 
 @keyframes fadeInAnimation {
   from {
@@ -200,6 +212,10 @@ nav {
 
 
 
+.page-content {
+  margin-top: 70px;
+  /* Ajuste selon la hauteur du header */
+}
 
 /* ✅ Correction du Main */
 main {

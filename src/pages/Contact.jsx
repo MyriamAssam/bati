@@ -66,48 +66,50 @@ const Contact = () => {
     };
 
     return (
-        <form className="form-container fade-in" onSubmit={handleSubmit} >
-            <h2>{t("contact")}</h2>
+        <div className="page-content">
+            <form className="form-container fade-in page-content" onSubmit={handleSubmit} >
+                <h2>{t("contact")}</h2>
 
-            <div style={fieldStyle}>
-                <label>Prénom :</label>
-                <input type="text" placeholder={t("first_name")} name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
-            </div>
+                <div style={fieldStyle}>
+                    <label>Prénom :</label>
+                    <input type="text" placeholder={t("first_name")} name="firstName" value={formData.firstName} onChange={handleChange} required style={inputStyle} />
+                </div>
 
-            <div style={fieldStyle}>
-                <label>Nom :</label>
-                <input type="text" placeholder={t("last_name")} name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
-            </div>
+                <div style={fieldStyle}>
+                    <label>Nom :</label>
+                    <input type="text" placeholder={t("last_name")} name="lastName" value={formData.lastName} onChange={handleChange} required style={inputStyle} />
+                </div>
 
-            <div style={fieldStyle}>
-                <label>Email :</label>
-                <input type="email" placeholder={t("email")} name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
-            </div>
+                <div style={fieldStyle}>
+                    <label>Email :</label>
+                    <input type="email" placeholder={t("email")} name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
+                </div>
 
-            <div style={fieldStyle}>
-                <label>Description :</label>
-                <textarea name="description" value={formData.description} onChange={handleChange} rows="4" style={{ ...inputStyle, height: "100px" }} />
-            </div>
+                <div style={fieldStyle}>
+                    <label>Description :</label>
+                    <textarea name="description" value={formData.description} onChange={handleChange} rows="4" style={{ ...inputStyle, height: "100px" }} />
+                </div>
 
-            <div style={fieldStyle}>
-                <label>Ajoutez des photos ou vidéos :</label>
-                <input type="file" placeholder={t("fichiers")} multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
-            </div>
+                <div style={fieldStyle}>
+                    <label>Ajoutez des photos ou vidéos :</label>
+                    <input type="file" placeholder={t("fichiers")} multiple accept="image/*,video/*" onChange={handleFileChange} style={inputStyle} />
+                </div>
 
-            <button type="submit" style={buttonStyle}>
-                {t("envoi")}
-            </button>
+                <button type="submit" style={buttonStyle}>
+                    {t("envoi")}
+                </button>
 
-            {message && (
-                <p style={{
-                    color: message.type === "success" ? "green" : "red",
-                    fontWeight: "bold",
-                    marginTop: "10px"
-                }}>
-                    {message.text}
-                </p>
-            )}
-        </form>
+                {message && (
+                    <p style={{
+                        color: message.type === "success" ? "green" : "red",
+                        fontWeight: "bold",
+                        marginTop: "10px"
+                    }}>
+                        {message.text}
+                    </p>
+                )}
+            </form>
+        </div>
     );
 };
 

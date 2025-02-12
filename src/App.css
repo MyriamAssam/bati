@@ -221,7 +221,7 @@ main {
   width: 100%;
   padding: 20px 0;
   background-color: #AD8A64;
-  display: flex;
+  /*display: flex;*/
   flex-direction: column;
   align-items: center;
   text-align: center;

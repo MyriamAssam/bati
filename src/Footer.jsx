@@ -33,7 +33,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Section Copyright */}
+            {/* ✅ Section Copyright (fixée pour éviter la variation de hauteur) */}
             <div className="footer-copyright">
                 <p>© 2024 Bâti Québec Inc. {t("copyright")}</p>
             </div>

@@ -32,10 +32,7 @@ const Header = () => {
                     </ul>
                 </nav>
 
-                <div className="language-switcher">
-                    <button onClick={() => i18n.changeLanguage("fr")}>🇫🇷 Français</button>
-                    <button onClick={() => i18n.changeLanguage("en")}>🇬🇧 English</button>
-                </div>
+
             </header>
         </Suspense>
     );

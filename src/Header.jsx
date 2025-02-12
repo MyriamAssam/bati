@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <header className="header">
+            <header>
                 <div className="logo-container">
                     <img src="/images/logoBati.jpg" alt="Logo" className="logo" />
                 </div>

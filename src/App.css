@@ -264,42 +264,6 @@ main {
   margin-bottom: 10px;
 }
 
-.form-container {
-  max-width: 800px;
-  width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-  background: #ECE2D0;
-  border-radius: 10px;
-}
-
-.form-container input,
-.form-container textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.form-container label {
-  font-weight: bold;
-  display: block;
-  margin-top: 10px;
-}
-
-.form-container button {
-  background-color: #AD8A64;
-  color: white;
-  padding: 10px 15px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-
 /* ✅ Ajustement mobile */
 @media (max-width: 768px) {
   .footer-container {

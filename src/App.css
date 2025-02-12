@@ -1,6 +1,12 @@
-html,
-body,
+/* ✅ Ajustement global */
 #root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+html,
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -9,180 +15,6 @@ body,
   background-color: #ECE2D0;
 }
 
-/* ✅ Ajustement du header */
-.header {
-  background-color: #AD8A64;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 80px;
-  /* Augmenté légèrement */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* ✅ Ajustement du logo pour qu'il ne dépasse pas */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 40px;
-  /* Taille réduite */
-  width: auto;
-  max-height: 100%;
-}
-
-/* ✅ Ajustement du contenu pour éviter qu’il soit caché par le header */
-main {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-  margin-top: 100px;
-  /* Ajusté pour correspondre à la hauteur du header */
-}
-
-/* ✅ Ajustement du Footer */
-.footer {
-  width: 100%;
-  padding: 15px 0;
-  background-color: #AD8A64;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: auto;
-  height: auto;
-}
-
-/* ✅ Correction de la structure du footer */
-.footer-container {
-  display: flex;
-  justify-content: space-around;
-  max-width: 1000px;
-  width: 100%;
-  padding: 10px;
-  gap: 10px;
-}
-
-/* ✅ Réduction de la taille du logo dans le footer */
-.footer-section img {
-  width: 50px;
-  height: auto;
-  margin-bottom: 5px;
-}
-
-.footer-section {
-  text-align: center;
-}
-
-/* ✅ Correction de la navigation */
-.nav {
-  display: flex;
-  align-items: center;
-}
-
-.menu-list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-list li {
-  padding: 10px 10px;
-}
-
-.menu-list a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.menu-list a:hover {
-  text-decoration: underline;
-}
-
-/* ✅ Bouton de langue */
-.language-switcher {
-  display: flex;
-  gap: 10px;
-}
-
-.language-switcher button {
-  background: none;
-  border: none;
-  font-size: 13px;
-  cursor: pointer;
-  color: white;
-}
-
-/* ✅ Menu burger sur mobile */
-.menu-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-}
-
-/* ✅ Ajustement du footer en mobile */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
-  }
-
-  .footer-section img {
-    width: 40px;
-    height: auto;
-  }
-}
-
-/* ✅ Ajustement de la navigation en mobile */
-@media (max-width: 768px) {
-  .menu-button {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #AD8A64;
-    flex-direction: column;
-    padding: 10px 0;
-    text-align: center;
-  }
-
-  .menu-open {
-    display: flex !important;
-  }
-
-  .menu-list {
-    flex-direction: column;
-  }
-
-  .menu-list li {
-    padding: 8px;
-  }
-}
-
-/* ✅ Effet d'apparition */
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
@@ -198,4 +30,296 @@ main {
 .fade-in {
   opacity: 0;
   animation: fadeInAnimation 1s ease-in-out forwards;
+}
+
+
+.head-text {
+  position: relative;
+}
+
+/* ✅ Correction du Header */
+header {
+  background-color: #AD8A64;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-left: 10px;
+}
+
+/* ✅ Correction du Menu Desktop */
+/* ✅ Assurez-vous que le menu ne se coupe pas sur mobile */
+/* ✅ Correction du Menu */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #AD8A64;
+  padding: 10px 0;
+}
+
+.menuListStyle {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Assure un bon espacement */
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.menuListStyle li {
+  padding: 10px;
+  text-align: center;
+  flex-grow: 1;
+  /* Permet aux liens de bien s’adapter */
+}
+
+.menuListStyle a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  width: 100%;
+}
+
+.menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Cacher le menu par défaut sur mobile */
+.menu-closed {
+  display: none;
+}
+
+.menu-open {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #AD8A64;
+}
+
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    /* Décalage sous le header */
+    left: 0;
+    background-color: #AD8A64;
+    z-index: 999;
+    display: none;
+    /* Caché par défaut */
+  }
+
+  .menu-open {
+    display: flex !important;
+    /* S'assurer qu'il s'affiche */
+  }
+
+  .menuListStyle {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menuListStyle li {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .menu-button {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 57px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    z-index: 1001;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .menuListStyle {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menuListStyle li {
+    flex: 1 1 auto;
+    min-width: 120px;
+    /* Évite que les éléments se superposent */
+  }
+}
+
+
+
+
+/* ✅ Correction du Main */
+main {
+  flex: 1;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
+  margin-top: 90px;
+  /* ✅ Évite le chevauchement du header */
+}
+
+/* ✅ Correction du Footer */
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #AD8A64;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-section .footer-link {
+
+  color: #ECE2D0;
+
+
+}
+
+.footer-button {
+
+  background-color: #ECE2D0;
+
+
+}
+
+.footer-section img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.form-container {
+  max-width: 800px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ECE2D0;
+  border-radius: 10px;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-container label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-container button {
+  background-color: #AD8A64;
+  color: white;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+
+/* ✅ Ajustement mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .footer-section img {
+    width: 100px;
+    height: auto;
+  }
+
+  .footer-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+.read-the-docs {
+  color: #888;
 }

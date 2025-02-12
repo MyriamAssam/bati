@@ -1,32 +1,38 @@
+import { useState } from "react";
 import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const Header = () => {
     const { t, i18n } = useTranslation();
+    const [menuOpen, setMenuOpen] = useState(false);
 
     if (!t) {
-        return <div>Loading...</div>; // ✅ Évite l'erreur si `useContext` est null
+        return <div>Loading...</div>;
     }
 
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <header>
+            <header className="header">
                 <div className="logo-container">
                     <img src="/images/logoBati.jpg" alt="Logo" className="logo" />
                 </div>
 
-                <nav>
-                    <ul>
-                        <li><Link to="/">{t("home")}</Link></li>
-                        <li><Link to="/about">{t("A_propos")}</Link></li>
-                        <li><Link to="/qualifications">Qualifications</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/rdv">{t("rdv")}</Link></li>
+                <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+                    ☰
+                </button>
+
+                <nav className={`nav ${menuOpen ? "menu-open" : ""}`}>
+                    <ul className="menu-list">
+                        <li><Link to="/" onClick={() => setMenuOpen(false)}>{t("home")}</Link></li>
+                        <li><Link to="/about" onClick={() => setMenuOpen(false)}>{t("A_propos")}</Link></li>
+                        <li><Link to="/qualifications" onClick={() => setMenuOpen(false)}>Qualifications</Link></li>
+                        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+                        <li><Link to="/rdv" onClick={() => setMenuOpen(false)}>{t("rdv")}</Link></li>
                     </ul>
                 </nav>
 
-                <div style={{ marginLeft: "20px" }}>
+                <div className="language-switcher">
                     <button onClick={() => i18n.changeLanguage("fr")}>🇫🇷 Français</button>
                     <button onClick={() => i18n.changeLanguage("en")}>🇬🇧 English</button>
                 </div>

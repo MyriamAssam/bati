@@ -1,25 +1,18 @@
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex-grow: 1;
-  /* 🚀 Force le main à occuper l'espace vide */
-  min-height: calc(100vh - 80px - 200px);
-  /* 80px (Header) + ~200px (Footer) */
-  padding: 20px;
-}
-
-html,
-body {
+#root,
+body,
+html {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #ECE2D0;
+}
+
+/* ✅ Main doit prendre tout l’espace disponible */
+main {
+  flex-grow: 1;
+  /* Force main à occuper l’espace restant */
+  padding: 20px;
 }
 
 @keyframes fadeInAnimation {

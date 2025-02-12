@@ -22,13 +22,13 @@ const Header = () => {
                     ☰
                 </button>
 
-                <nav className={`nav ${menuOpen ? "menu-open" : ""}`}>
-                    <ul className="menu-list">
-                        <li><Link to="/" onClick={() => setMenuOpen(false)}>{t("home")}</Link></li>
-                        <li><Link to="/about" onClick={() => setMenuOpen(false)}>{t("A_propos")}</Link></li>
-                        <li><Link to="/qualifications" onClick={() => setMenuOpen(false)}>Qualifications</Link></li>
-                        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
-                        <li><Link to="/rdv" onClick={() => setMenuOpen(false)}>{t("rdv")}</Link></li>
+                <nav className={menuOpen ? "menu-open" : ""}>
+                    <ul className="menuListStyle">
+                        <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                        <li><Link to="/about" onClick={closeMenu}>À propos</Link></li>
+                        <li><Link to="/qualifications" onClick={closeMenu}>Qualifications</Link></li>
+                        <li><Link to="/contact" onClick={closeMenu}>Contact</Link></li>
+                        <li><Link to="/rdv" onClick={closeMenu}>Rendez-vous</Link></li>
                     </ul>
                 </nav>
 

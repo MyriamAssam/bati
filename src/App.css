@@ -1,18 +1,23 @@
-#root,
-body,
-html {
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+
+  padding: 20px;
+}
+
+html,
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-}
-
-/* ✅ Main doit prendre tout l’espace disponible */
-main {
-  flex-grow: 1;
-  /* Force main à occuper l’espace restant */
-  padding: 20px;
+  background-color: #ECE2D0;
 }
 
 @keyframes fadeInAnimation {

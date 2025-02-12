@@ -1,4 +1,4 @@
-/* ✅ Assurer que le footer reste en bas */
+/* ✅ Assurer que le footer reste toujours en bas */
 html,
 body,
 #root {
@@ -24,52 +24,57 @@ body,
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 70px;
+  height: 60px;
   /* Réduction de la hauteur */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* ✅ Ajustement du contenu pour éviter qu'il soit caché sous le header */
+/* ✅ Ajustement du contenu pour qu’il ne soit PAS caché par le header */
 main {
   flex: 1;
   padding: 20px;
   text-align: center;
   position: relative;
   margin-top: 80px;
-  /* Ajusté pour correspondre à la hauteur du header */
+  /* Ajusté pour correspondre à la nouvelle hauteur du header */
 }
 
-/* ✅ Correction du Header */
-.header {
-  background-color: #AD8A64;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* ✅ Ajustement du Footer pour éviter qu’il ne prenne trop de place */
+.footer {
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 90px;
-  /* Réduit légèrement la hauteur */
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* ✅ Logo */
-.logo-container {
+  padding: 15px 0;
+  background-color: #AD8A64;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  margin-top: auto;
+  height: auto;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
+/* ✅ Correction de la structure du footer */
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1000px;
+  width: 100%;
+  padding: 10px;
+  gap: 10px;
 }
 
-/* ✅ Navigation */
+/* ✅ Réduction de la taille du logo dans le footer */
+.footer-section img {
+  width: 60px;
+  /* Taille réduite */
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.footer-section {
+  text-align: center;
+}
+
+/* ✅ Correction de la navigation */
 .nav {
   display: flex;
   align-items: center;
@@ -83,13 +88,13 @@ main {
 }
 
 .menu-list li {
-  padding: 10px 15px;
+  padding: 10px 10px;
 }
 
 .menu-list a {
   color: white;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
 }
 
@@ -97,7 +102,7 @@ main {
   text-decoration: underline;
 }
 
-/* ✅ Bouton Langue */
+/* ✅ Bouton de langue */
 .language-switcher {
   display: flex;
   gap: 10px;
@@ -106,12 +111,12 @@ main {
 .language-switcher button {
   background: none;
   border: none;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   color: white;
 }
 
-/* ✅ Menu Burger sur Mobile */
+/* ✅ Menu burger sur mobile */
 .menu-button {
   display: none;
   background: none;
@@ -121,53 +126,11 @@ main {
   color: white;
 }
 
-.footer {
-  width: 100%;
-  padding: 15px 0;
-  background-color: #AD8A64;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: auto;
-  /* Assure que le footer reste en bas */
-}
-
-/* ✅ Correction de la structure du footer */
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  width: 100%;
-  padding: 10px;
-  gap: 20px;
-}
-
-/* ✅ Réduction de la taille du logo dans le footer */
-.footer-section img {
-  width: 80px;
-  /* Réduction de la taille */
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.footer-section {
-  text-align: center;
-}
-
-.footer-section .footer-link {
-  color: #ECE2D0;
-}
-
-.footer-button {
-  background-color: #ECE2D0;
-}
-
-/* ✅ Correction du Formulaire */
+/* ✅ Correction de l'affichage du formulaire */
 .form-container {
-  max-width: 800px;
+  max-width: 700px;
   width: 90%;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px;
   background: #ECE2D0;
   border-radius: 10px;
@@ -176,10 +139,10 @@ main {
 .form-container input,
 .form-container textarea {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .form-container label {
@@ -191,15 +154,29 @@ main {
 .form-container button {
   background-color: #AD8A64;
   color: white;
-  padding: 10px 15px;
-  font-size: 16px;
+  padding: 8px 15px;
+  font-size: 14px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
 }
 
-/* ✅ Ajustement Responsive */
+/* ✅ Ajustement du footer en mobile */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .footer-section img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+/* ✅ Ajustement de la navigation en mobile */
 @media (max-width: 768px) {
   .menu-button {
     display: block;
@@ -208,7 +185,7 @@ main {
   .nav {
     display: none;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: #AD8A64;
@@ -226,19 +203,7 @@ main {
   }
 
   .menu-list li {
-    padding: 10px;
-  }
-
-  /* ✅ Ajustement du footer en mobile */
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-
-  .footer-section img {
-    width: 100px;
-    height: auto;
+    padding: 8px;
   }
 }
 
@@ -259,6 +224,7 @@ main {
   opacity: 0;
   animation: fadeInAnimation 1s ease-in-out forwards;
 }
+
 
 .read-the-docs {
   color: #888;

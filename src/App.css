@@ -221,8 +221,8 @@ main {
   width: 100%;
   padding: 20px 0;
   background-color: #AD8A64;
-  /*display: flex;*/
-  flex-direction: column;
+  display: flex;
+  /*flex-direction: column;*/
   align-items: center;
   text-align: center;
   position: relative;
@@ -230,8 +230,8 @@ main {
 }
 
 .footer-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  /*display: grid;*/
+  /*grid-template-columns: 1fr 1fr 1fr;*/
   align-items: center;
   justify-content: center;
   max-width: 1200px;

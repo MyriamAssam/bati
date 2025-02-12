@@ -10,80 +10,14 @@ body,
   background-color: #ECE2D0;
 }
 
+/* ✅ Assurer que le header ne cache pas le contenu */
 main {
   flex: 1;
   padding: 20px;
   text-align: center;
   position: relative;
-  min-height: 100vh;
-  margin-top: 100px;
-  /* ✅ Évite le chevauchement du header */
-}
-
-/* ✅ Correction du Footer */
-.footer {
-  width: 100%;
-  padding: 20px 0;
-  background-color: #AD8A64;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: auto;
-  /* ✅ Place le footer en bas */
-}
-
-/* ✅ Correction du problème de header fixe cachant le contenu */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background-color: #AD8A64;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-main {
-  padding-top: 100px;
-  /* ✅ Décale le contenu vers le bas pour éviter qu'il soit caché */
-}
-
-
-@keyframes fadeInAnimation {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeInAnimation 1s ease-in-out forwards;
-}
-
-
-.head-text {
-  position: relative;
-}
-
-/* ✅ Ajustement global */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #ECE2D0;
-  font-family: Arial, sans-serif;
+  margin-top: 90px;
+  /* Augmenté pour compenser la hauteur du header */
 }
 
 /* ✅ Correction du Header */
@@ -100,7 +34,8 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 80px;
+  height: 90px;
+  /* Réduit légèrement la hauteur */
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -144,12 +79,16 @@ body {
 }
 
 /* ✅ Bouton Langue */
+.language-switcher {
+  display: flex;
+  gap: 10px;
+}
+
 .language-switcher button {
   background: none;
   border: none;
   font-size: 14px;
   cursor: pointer;
-  margin-left: 10px;
   color: white;
 }
 
@@ -163,211 +102,7 @@ body {
   color: white;
 }
 
-/* ✅ Responsive */
-@media (max-width: 768px) {
-  .menu-button {
-    display: block;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #AD8A64;
-    flex-direction: column;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  .menu-open {
-    display: flex !important;
-  }
-
-  .menu-list {
-    flex-direction: column;
-  }
-
-  .menu-list li {
-    padding: 12px;
-  }
-}
-
-
-header {
-  background-color: #AD8A64;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  height: 80px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* ✅ Logo */
-.logo-container {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  height: 50px;
-  width: auto;
-  margin-left: 10px;
-}
-
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #AD8A64;
-  padding: 10px 0;
-}
-
-.menuListStyle {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  /* Assure un bon espacement */
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.menuListStyle li {
-  padding: 10px;
-  text-align: center;
-  flex-grow: 1;
-  /* Permet aux liens de bien s’adapter */
-}
-
-.menuListStyle a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  display: block;
-  width: 100%;
-}
-
-.menu-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-/* Cacher le menu par défaut sur mobile */
-.menu-closed {
-  display: none;
-}
-
-.menu-open {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background-color: #AD8A64;
-}
-
-
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    /* Décalage sous le header */
-    left: 0;
-    background-color: #AD8A64;
-    z-index: 999;
-    display: none;
-    /* Caché par défaut */
-  }
-
-  .menu-open {
-    display: flex !important;
-    /* S'assurer qu'il s'affiche */
-  }
-
-  .menuListStyle {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-  }
-
-  .menuListStyle li {
-    width: 100%;
-    padding: 12px;
-  }
-
-  .menu-button {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 57px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: white;
-    z-index: 1001;
-  }
-}
-
-
-
-
-@media (max-width: 768px) {
-  .menuListStyle {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .menuListStyle li {
-    flex: 1 1 auto;
-    min-width: 120px;
-    /* Évite que les éléments se superposent */
-  }
-}
-
-
-
-
-/* ✅ Correction du Main */
-main {
-  flex: 1;
-  padding: 0;
-  text-align: center;
-  position: relative;
-  min-height: 100vh;
-  margin-top: 90px;
-  /* ✅ Évite le chevauchement du header */
-}
-
-/* ✅ Correction du Footer */
+/* ✅ Footer Fixé en bas */
 .footer {
   width: 100%;
   padding: 20px 0;
@@ -376,10 +111,10 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
   margin-top: auto;
 }
 
+/* ✅ Structure du Footer */
 .footer-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -396,29 +131,17 @@ main {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
 }
 
 .footer-section .footer-link {
-
   color: #ECE2D0;
-
-
 }
 
 .footer-button {
-
   background-color: #ECE2D0;
-
-
 }
 
-.footer-section img {
-  width: 120px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
+/* ✅ Correction du Formulaire */
 .form-container {
   max-width: 800px;
   width: 90%;
@@ -454,9 +177,39 @@ main {
   margin-top: 10px;
 }
 
-
-/* ✅ Ajustement mobile */
+/* ✅ Ajustement Responsive */
 @media (max-width: 768px) {
+
+  /* ✅ Adaptation du header */
+  .menu-button {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background-color: #AD8A64;
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .menu-open {
+    display: flex !important;
+  }
+
+  .menu-list {
+    flex-direction: column;
+  }
+
+  .menu-list li {
+    padding: 12px;
+  }
+
+  /* ✅ Adaptation du Footer */
   .footer-container {
     flex-direction: column;
     align-items: center;
@@ -468,11 +221,24 @@ main {
     width: 100px;
     height: auto;
   }
+}
 
-  .footer-section {
-    text-align: center;
-    margin-top: 20px;
+/* ✅ Effet d'apparition */
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
 }
 
 .read-the-docs {

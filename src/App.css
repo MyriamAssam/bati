@@ -5,10 +5,11 @@
 }
 
 main {
-  flex: 1;
-  /* ✅ Force le main à prendre l’espace restant */
+  flex-grow: 1;
+  /* 🚀 Force le main à occuper l'espace vide */
+  min-height: calc(100vh - 80px - 200px);
+  /* 80px (Header) + ~200px (Footer) */
   padding: 20px;
-  /* Ajoutez du padding pour éviter que le contenu colle aux bords */
 }
 
 html,
@@ -208,14 +209,14 @@ nav {
 
 
 
-/* ✅ Correction du Footer */
+
 .footer {
   width: 100%;
   background-color: #AD8A64;
   padding: 30px 0;
   text-align: center;
   margin-top: auto;
-  /* ✅ Force le footer à rester en bas */
+
 }
 
 .footer-container {

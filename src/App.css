@@ -38,6 +38,20 @@ main {
   /* Ajusté pour correspondre à la hauteur du header */
 }
 
+/* ✅ Ajustement du logo pour qu'il ne dépasse pas */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  /* Ajustez selon la taille voulue */
+  width: auto;
+  max-height: 100%;
+  /* Empêche le logo de dépasser */
+}
+
 /* ✅ Ajustement du Footer pour éviter qu’il ne prenne trop de place */
 .footer {
   width: 100%;

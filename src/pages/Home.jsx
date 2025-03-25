@@ -137,7 +137,7 @@ const Home = () => {
 
                         </button>
 
-                        <button onClick="https://app-soumission.onrender.com"
+                        <button onClick={() => window.location.href = "https://app-soumission.onrender.com"}
                             style={{
                                 marginTop: "5px",
                                 color: "white",
@@ -150,8 +150,8 @@ const Home = () => {
                                 cursor: "pointer",
                             }}>
                             {t("soumissions")}
-
                         </button>
+
                     </div>
 
                 </div>

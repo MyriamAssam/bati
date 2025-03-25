@@ -1,10 +1,10 @@
 {
     "A_propos": "À propos",
-    "description": "La première entreprise de construction et de rénovation au Québec",
-    "description2": "Bâti Québec Inc. sert la grande région de Montréal avec des travaux de haute qualité depuis plus de 17 ans. Avec une équipe dédiée d'experts formés en rénovation domiciliaire et en nouvelle construction, nous sommes en mesure de servir nos clients de manière efficace et appropriée à chaque fois. De la rénovation aux ajouts de pièces et tout le reste, vous pouvez compter sur Bâti Québec Inc. pour être votre entrepreneur de confiance.",
-    "description3": "Si vous avez besoin de travaux à domicile, un de nos spécialistes peut se déplacer chez vous pour une estimation gratuite à domicile. Vous cherchez à apporter des améliorations, mais vous êtes à court d’idées ou d’inspiration ? Contactez-nous dès aujourd'hui et l'un de nos experts analysera vos besoins pour créer une estimation de conception personnalisée.",
+    "description": "Leader dans la construction et la rénovation au Québec",
+    "description2": "Bati Québec Inc. sert la grande région de Montréal avec des travaux de haute qualité depuis plus de 17 ans. Elle est composée d'une équipe d'experts en rénovation domiciliaire et en nouvelle construction. Nous sommes en mesure de servir nos clients de manière efficace et appropriée, d'analyser vos besoins, vous conseillez tout au long de votre projet. Vous pouvez compter sur Bâti Québec Inc. ,nous sommes reconnus pour être votre entrepreneur de confiance.",
+    "description3": "Si vous avez besoin de réaliser des travaux de rénovation, un de nos spécialistes peut se déplacer chez vous pour une estimation gratuite. Vous cherchez à apporter des améliorations, mais vous êtes à court d’idées ou d’inspiration ? Vous pouvez compter sur nous dès aujourd'hui. Contactez-nous dès maintenant et l'un de nos experts analysera vos besoins et vous recevrez, dans de courts délais, une estimation de conception personnalisée et gratuite.",
     "description4": "Bâti Québec Inc - Notre mission",
-    "description5": "Notre objectif est de servir tous nos clients dans la plus haute mesure possible et de nous assurer que nous offrons nos services à un tarif économique et raisonnable. Nous visons à atteindre 100 % de satisfaction avec tous les projets, poursuivant notre héritage en tant qu'entrepreneur expert avec plus de 17 ans d'expérience.",
+    "description5": "Notre objectif est de servir tous nos clients dans des délais raisonnables, de nous assurer de vous offrir des services à un tarif économique et abordable. Nous visons à atteindre 100 % de satisfaction de notre clientèle, poursuivant notre héritage en tant qu'entrepreneur expert avec plus de 17 ans d'expérience.",
     "contact": "Contactez-nous !",
     "first_name": "Prénom",
     "last_name": "Nom",
@@ -12,7 +12,7 @@
     "fichiers": "Ajoutez des photos ou vidéos : ",
     "envoi": "Envoyer",
     "welcome": "Bienvenue dans le site de Bâti Québec Inc.",
-    "descriptionEntreprise": "Nous sommes une petite entreprise privée fournissant toutes les phases de construction à nos clients propriétaires. Nous vous traiterons, vous et votre famille, de la conception à l'inspection finale, avec respect du début à la fin. Qu'il s'agisse de rénover une petite salle de bain ou de construire une maison entière, nous somme une compagnie de confiance.",
+    "descriptionEntreprise": "Nous sommes une entreprise privée fournissant toutes les phases de construction à nos clients propriétaires et futurs propriétaires. Nous prenons en charge votre projet de construction ou de rénovation de la conception à l'inspection finale, projet clé en main. Tout ceci se fait dans le respect et professionnalisme. Qu'il s'agisse de rénover une petite salle de bain ou de construire votre maison de rêve, vous pouvez compter sur  Bâti Québec Inc. !",
     "rendezvous": "Prenez rendez-vous avec nous",
     "services": "SERVICES",
     "services2": "PROJETS OCCUPÉS PAR LE PROPRIÉTAIRE",
@@ -54,5 +54,6 @@
     "contactfooter": "Contactez-nous",
     "copyright": "© 2024 Bâti Québec Inc. Tous droits réservés.",
     "home": "Accueil",
-    "rdv": "Rendez-vous"
+    "rdv": "Rendez-vous",
+    "soumissions": "Obtenir des soumissions"
 }

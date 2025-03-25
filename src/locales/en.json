@@ -1,17 +1,17 @@
 {
     "A_propos": "About",
-    "description": "The leading construction and renovation company in Quebec",
-    "description2": "Bâti Québec Inc. has been serving the greater Montreal area with high-quality work for over 17 years. With a dedicated team of trained experts in home renovation and new construction, we are able to serve our clients efficiently and appropriately every time. From renovations to room additions and everything in between, you can count on Bâti Québec Inc. to be your trusted contractor.",
-    "description3": "If you need work done at home, one of our specialists can come to your home for a free in-home estimate. Are you looking to make improvements but are short on ideas or inspiration? Contact us today and one of our experts will analyze your needs to create a personalized design estimate.",
+    "description": "Leader in construction and renovation in Quebec",
+    "description2": "Bati Québec Inc. has been serving the greater Montreal area with high quality work for over 17 years. It is made up of a team of experts in home renovation and new construction. We are able to serve our customers efficiently and appropriately, analyze your needs and advise you throughout your project. You can count on Bâti Québec Inc., we are recognized for being your trusted contractor.",
+    "description3": "If you need to carry out renovation work, one of our specialists can come to your home for a free estimate. Are you looking to make improvements, but running out of ideas or inspiration? You can count on us today. Contact us now and one of our experts will analyze your needs and you will receive, as soon as possible, a personalized and free design estimate.",
     "description4": "Bâti Québec Inc - Our mission",
-    "description5": "Our goal is to serve all our clients to the highest extent possible and ensure that we offer our services at an economical and reasonable rate. We aim to achieve 100% satisfaction with all projects, continuing our legacy as an expert contractor with over 17 years of experience.",
+    "description5": "Our goal is to serve all our customers in a timely manner, ensuring we offer you services at an economical and affordable rate. We aim to achieve 100% customer satisfaction, continuing our legacy as an expert contractor with over 17 years of experience.",
     "contact": "Contact us !",
     "first_name": "First name",
     "last_name": "Last name",
     "fichiers": "Add videos or pictures : ",
     "envoi": "Send",
     "welcome": "Welcome to the Bâti Québec Inc. website",
-    "descriptionEntreprise": "We are a small privately owned company providing all phases of construction to our homeowner clients. We will treat you and your family, from design to final inspection, with respect from start to finish. Whether you are remodeling a small bathroom or building an entire home, we are a company you can trust.",
+    "descriptionEntreprise": "We are a private company providing all phases of construction to our owner and future owner clients. We take care of your construction or renovation project from design to final inspection, turnkey project. All this is done with respect and professionalism. Whether it's renovating a small bathroom or building your dream home, you can count on Bâti Québec Inc.!",
     "rendezvous": "Take an appointment with us",
     "services": "SERVICES",
     "services2": "OWNER OCCUPIED PROJECTS",
@@ -55,5 +55,6 @@
     "contactfooter": "Contact us",
     "copyright": "© 2024 Bâti Québec Inc. All rights reserved.",
     "home": "Home",
-    "rdv": "Appointment"
+    "rdv": "Appointment",
+    "soumissions": "get quotes"
 }

@@ -26,9 +26,9 @@ const Footer = () => {
                 {/* 📞 Section Contact */}
                 <div className="footer-section">
                     <h3>Contact</h3>
-                    <p><i className="fas fa-phone"></i> (514) 992-8595</p>
-                    <p><i className="fas fa-envelope"></i> <a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
-                    <p><i className="fas fa-id-badge"></i> RBQ : 5587-0471-01</p>
+                    <p>(514) 992-8595</p>
+                    <p> <a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
+                    <p> RBQ : 5587-0471-01</p>
                 </div>
 
                 {/* 💬 Section Action */}
@@ -37,7 +37,7 @@ const Footer = () => {
                     <button onClick={() => navigate("/contact")} className="footer-button">
                         {t("contactfooter")}
                     </button>
-                    <div class="language-buttons">
+                    <div className="language-buttons">
                         <button onClick={() => changeLanguage('fr')} className="lang-btn">FR</button>
                         <button onClick={() => changeLanguage('en')} className="lang-btn">EN</button>
                     </div>

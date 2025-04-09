@@ -45,10 +45,10 @@ const Rdv = () => {
             formDataObj.append("files", file);
         });
 
-        const API_URL = import.meta.env.VITE_API_URL;  // ✅ Prend l'URL depuis .env
+        const API_URL = import.meta.env.VITE_API_URL;
 
         try {
-            const response = await fetch(`${API_URL}/api/rdv`, {  // ✅ Utilisation dynamique de l'URL
+            const response = await fetch(`${API_URL}/api/rdv`, {
                 method: "POST",
                 body: formDataObj
             });

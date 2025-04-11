@@ -97,7 +97,7 @@ main {
 /* ✅ Ajustements pour écrans très larges */
 @media (min-width: 1600px) {
   .fixed-logos {
-    gap: 1400px;
+    gap: 700px;
 
   }
 
@@ -155,7 +155,7 @@ main {
     cursor: pointer;
     pointer-events: all;
     width: auto;
-    margin-right: -700px;
+    margin-right: 0px;
 
     height: 70px;
     white-space: nowrap;

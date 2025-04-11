@@ -20,7 +20,7 @@ const Home = () => {
     useEffect(() => {
         const fadeInElements = document.querySelectorAll(".fade-in");
 
-        if (fadeInElements.length === 0) return; // Vérifie s'il y a des éléments
+        if (fadeInElements.length === 0) return;
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -123,7 +123,7 @@ const Home = () => {
 
                         <button onClick={() => navigate("/rdv")}
                             style={{
-                                marginTop: "5px",
+                                marginTop: "1px",
                                 color: "white",
                                 backgroundColor: "#AD8A64",
                                 padding: "12px 20px",
@@ -273,10 +273,6 @@ const Home = () => {
 
                             </button>
                         </div>
-
-
-
-
 
                     </div>
                 </section>

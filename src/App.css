@@ -45,7 +45,8 @@ main {
   cursor: pointer;
   pointer-events: all;
   width: auto;
-  /* Ajustement automatique selon le contenu */
+  margin-right: 10px;
+  margin-left: 5px;
   height: 70px;
   white-space: nowrap;
   /* Empêche le texte de passer à la ligne */

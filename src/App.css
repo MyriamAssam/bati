@@ -180,7 +180,7 @@ main {
   .fixed-logos {
     flex-direction: column;
     align-items: center;
-    gap: 850px;
+    gap: 1000px;
   }
 }
 

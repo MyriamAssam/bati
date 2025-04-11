@@ -136,7 +136,7 @@ main {
     cursor: pointer;
     pointer-events: all;
     width: auto;
-    margin-right: -400px;
+    margin-right: -500px;
 
     height: 70px;
     white-space: nowrap;
@@ -155,7 +155,7 @@ main {
     cursor: pointer;
     pointer-events: all;
     width: auto;
-    margin-right: -100px;
+    margin-right: -90px;
 
     height: 70px;
     white-space: nowrap;

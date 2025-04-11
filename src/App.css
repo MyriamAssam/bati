@@ -25,7 +25,7 @@ main {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 770px;
+  gap: 100px;
   /* Espacement entre les boutons */
   z-index: 1000;
   width: auto;
@@ -97,7 +97,7 @@ main {
 /* ✅ Ajustements pour écrans très larges */
 @media (min-width: 1600px) {
   .fixed-logos {
-    gap: 600px;
+    gap: 750px;
 
   }
 

@@ -97,7 +97,7 @@ main {
 /* ✅ Ajustements pour écrans très larges */
 @media (min-width: 1600px) {
   .fixed-logos {
-    gap: 700px;
+    gap: 500px;
 
   }
 

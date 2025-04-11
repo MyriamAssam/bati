@@ -97,7 +97,7 @@ main {
 /* ✅ Ajustements pour écrans très larges */
 @media (min-width: 1600px) {
   .fixed-logos {
-    gap: 1500px;
+    gap: 40px;
     /* Augmente l’espace entre les boutons */
   }
 

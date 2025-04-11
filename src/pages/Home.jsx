@@ -123,7 +123,7 @@ const Home = () => {
 
                         <button onClick={() => navigate("/rdv")}
                             style={{
-                                marginTop: "1px",
+                                marginTop: "-1px",
                                 color: "white",
                                 backgroundColor: "#AD8A64",
                                 padding: "12px 20px",

@@ -97,8 +97,8 @@ main {
 /* ✅ Ajustements pour écrans très larges */
 @media (min-width: 1600px) {
   .fixed-logos {
-    gap: 1500px;
-    margin-right: 20px;
+    gap: 1400px;
+
   }
 
   .logo-rbq p {
@@ -155,7 +155,7 @@ main {
     cursor: pointer;
     pointer-events: all;
     width: auto;
-    margin-left: 700px;
+    margin-right: 700px;
 
     height: 70px;
     white-space: nowrap;

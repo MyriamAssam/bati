@@ -52,6 +52,25 @@ main {
 
 }
 
+.logo-rbq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #AD8A64;
+  padding: 10px 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  pointer-events: all;
+  width: auto;
+  margin-right: -200px;
+
+  height: 70px;
+  white-space: nowrap;
+
+}
+
 .logo-apchq img,
 .logo-rbq img {
   width: 40px;

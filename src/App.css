@@ -45,11 +45,11 @@ main {
   cursor: pointer;
   pointer-events: all;
   width: auto;
-  margin-right: 10px;
-  margin-left: 5px;
+  margin-right: -10px;
+
   height: 70px;
   white-space: nowrap;
-  /* Empêche le texte de passer à la ligne */
+
 }
 
 .logo-apchq img,

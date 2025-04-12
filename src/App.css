@@ -25,7 +25,7 @@ main {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 800px;
+  gap: 600px;
   /* Espacement entre les boutons */
   z-index: 1000;
   width: auto;

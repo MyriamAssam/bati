@@ -211,7 +211,18 @@ main {
 
 }
 
+.qualif-section-title {
+  background-color: #e6d6bc;
+  padding: 10px;
+  border-left: 5px solid #AD8A64;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
 
+.qualif-list {
+  columns: 2;
+  gap: 40px;
+}
 
 
 .travaux-container {

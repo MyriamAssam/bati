@@ -158,7 +158,7 @@ main {
 
     height: 70px;
     white-space: nowrap;
-    /* Empêche le texte de passer à la ligne */
+
   }
 
   .logo-rbq {
@@ -199,6 +199,11 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .logo-apchq {
+    align-self: flex-start;
+    margin-left: 10px;
   }
 }
 

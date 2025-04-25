@@ -621,6 +621,19 @@ header {
   margin-top: 150px;
 }
 
+.info-box-rdv {
+  flex: 0.9;
+  background-color: #f3ede2;
+  border-left: 4px solid #AD8A64;
+  padding: 20px;
+  border-radius: 10px;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 400px;
+
+  margin-top: 200px;
+}
 
 .info-box h3 {
   margin-top: 0;

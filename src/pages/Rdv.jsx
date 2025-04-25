@@ -119,7 +119,7 @@ const Rdv = () => {
                     </p>
                 )}
             </form>
-            <div className="info-box">
+            <div className="info-box-rdv">
                 <h3>Besoin d'aller plus loin ?</h3>
                 <p>Si vous souhaitez faire une soumission, rendez-vous sur notre site <strong>Bâti Québec Soumissions</strong> ou téléchargez l'application <strong>Bâti Québec Soumissions</strong>.</p>
                 <p>Pour estimer les prix de vos projets, téléchargez l'application <strong>Bâti Québec Estimation</strong>.</p>

@@ -613,7 +613,11 @@ header {
   color: #333;
   font-size: 16px;
   line-height: 1.6;
+  max-width: 400px;
+
+  margin-top: 80px;
 }
+
 
 .info-box h3 {
   margin-top: 0;

@@ -115,7 +115,7 @@ const Home = () => {
                         <p style={{
                             fontSize: "clamp(14px, 2vw, 16px)",
                             lineHeight: "1.7",
-                            marginBottom: "65px"
+                            marginBottom: "25px"
                         }}>
                             {t("descriptionEntreprise")}
 

@@ -16,7 +16,10 @@ const Header = () => {
             <header style={headerStyle}>
                 {/* 📌 Logo plus à gauche */}
                 <div style={logoContainer}>
-                    <img src="/images/logoBati.jpg" alt="Logo" style={logoStyle} />
+                    <Link to="/" onClick={() => setMenuOpen(false)}>
+                        <img src="/images/logoBati.jpg" alt="Logo" style={logoStyle} />
+                    </Link>
+
                 </div>
 
                 {/* 📌 Navigation plus à droite */}

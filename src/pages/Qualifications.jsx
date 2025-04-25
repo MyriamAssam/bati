@@ -9,12 +9,12 @@ const Qualifications = () => {
                 <p><a href="#gen">Général</a> | <a href="#spec">Spécialisé</a></p>
 
                 <h2 className="fade-in">Qualifications</h2>
-                <h3 className="fade-in qualif-section-title"> {t("categorie1")}</h3>
+                <a href="#gen"><h3 className="fade-in qualif-section-title"> {t("categorie1")}</h3></a>
                 <ul className="fade-in">
                     <li>{t("qualifications1")}</li>
                     <li>{t("qualifications2")}</li>
                 </ul>
-                <h3 className="fade-in qualif-section-title">{t("categorie2")}</h3>
+                <a href="#spec"><h3 className="fade-in qualif-section-title"> {t("categorie2")}</h3></a>
                 <ul className="qualif-list fade-in">
 
                     <li>{t("qualifications3")}</li>

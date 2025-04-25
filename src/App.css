@@ -203,7 +203,12 @@ main {
 
   .logo-apchq {
     align-self: flex-start;
-    margin-left: 60px;
+
+    .logo-apchq {
+      transform: translateX(-5px);
+      /* pousse visuellement à gauche */
+    }
+
   }
 }
 

@@ -640,6 +640,11 @@ header {
   color: #AD8A64;
 }
 
+.info-box-rdv h3 {
+  margin-top: 0;
+  color: #AD8A64;
+}
+
 .form-container {
   width: 60%;
   max-width: 800px;

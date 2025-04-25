@@ -68,7 +68,7 @@ const Rdv = () => {
     };
 
     return (
-        <div className="page-content">
+        <div className="page-content form-layout">
             <form className="form-container fade-in page-content" onSubmit={handleSubmit} >
                 <h2>Prenez un rendez-vous pour vos projets</h2>
 

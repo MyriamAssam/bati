@@ -121,7 +121,7 @@ const Rdv = () => {
             </form>
             <div className="info-box-rdv">
                 <h3>{t("Besoin d'aller plus loin ?")}</h3>
-                <p>{t("Si vous souhaitez faire une soumission, rendez-vous sur notre site")} <strong>Bâti Québec Soumissions</strong>{t("ou téléchargez l'application")} <strong>Bâti Québec Soumissions</strong>.</p>
+                <p>{t("Si vous souhaitez faire une soumission, rendez-vous sur notre site")} <strong>Bâti Québec Soumissions</strong> {t("ou téléchargez l'application")} <strong>Bâti Québec Soumissions</strong>.</p>
                 <p>{t("Pour estimer les prix de vos projets, téléchargez l'application")} <strong>Bâti Québec Estimation</strong>.</p>
             </div>
         </div>

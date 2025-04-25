@@ -66,8 +66,9 @@ const Contact = () => {
     };
 
     return (
-        <div className="page-content">
+        <div className="page-content form-layout">
             <form className="form-container fade-in page-content" onSubmit={handleSubmit} >
+
                 <h2>{t("contact")}</h2>
 
                 <div style={fieldStyle}>
@@ -109,7 +110,14 @@ const Contact = () => {
                     </p>
                 )}
             </form>
+            <div className="info-box">
+                <h3>Besoin d'aller plus loin ?</h3>
+                <p>Si vous souhaitez faire une soumission, rendez-vous sur notre site <strong>app-soumission</strong> ou téléchargez l'application <strong>App-Soumission</strong>.</p>
+                <p>Pour estimer les prix de vos projets, téléchargez l'application <strong>Bâti Québec Estimation</strong>.</p>
+            </div>
         </div>
+
+
     );
 };
 

@@ -69,7 +69,7 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
         // Envoi des emails
         await Promise.all([
             sendEmail(email, "Votre Demande de Contact - Bâti Québec", "", `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`),
-            sendEmail("info@batiquebec.com", "Nouvelle Demande de Contact", "", `<p>Nouveau message de ${firstName} ${lastName}.</p>`, attachments)
+            sendEmail("mimimontmo2@hotmail.com", "Nouvelle Demande de Contact", "", `<p>Nouveau message de ${firstName} ${lastName}.</p>`, attachments)
         ]);
 
         res.status(201).json({ message: "✅ Contact envoyé avec succès !" });
@@ -97,7 +97,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
         // Envoi des emails
         await Promise.all([
             sendEmail(email, "Confirmation de Rendez-vous - Bâti Québec", "", `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`),
-            sendEmail("billy@batiquebec.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
+            sendEmail("mimimontmo2@hotmail.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
         ]);
 
         res.status(201).json({ message: "✅ RDV enregistré et confirmé par email." });

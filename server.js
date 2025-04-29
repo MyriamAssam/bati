@@ -96,7 +96,6 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
 });
 
 
-// Route pour les rendez-vous
 app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
     const lang = req.headers['accept-language'] || 'fr';
     const t = translations[lang] || translations['fr'];
@@ -109,25 +108,39 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
             return res.status(400).json({ message: t.rdvAlreadyTaken });
         }
 
+        const attachments = req.files.map(file => ({
+            filename: file.originalname,
+            path: file.path
+        }));
+
         const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
         const newRdv = new Rdv({ ...req.body, files: fileUrls });
         await newRdv.save();
 
         await Promise.all([
-            sendEmail(email, t.rdvSubject, "", t.rdvMessage(date, time), [], t),
+            // Email client
+            sendEmail(
+                email,
+                t.rdvSubject,
+                "",
+                t.rdvMessage(firstName, lastName, date, time, description),
+                [],
+                t
+            ),
+            // Email admin avec pièces jointes
             sendEmail(
                 "mimimontmo2@gmail.com",
                 t.adminRdvSubject,
                 "",
                 `
-                ${t.adminRdvIntro(firstName, lastName)}
-                <p><strong>${t.adminEmail} :</strong> ${email}</p>
-                <p><strong>${t.adminDate} :</strong> ${date}</p>
-                <p><strong>${t.adminTime} :</strong> ${time}</p>
-                <p><strong>${t.adminDescription} :</strong></p>
-                <p>${description}</p>
-              `,
-                [],
+                    ${t.adminRdvIntro(firstName, lastName)}
+                    <p><strong>${t.adminEmail} :</strong> ${email}</p>
+                    <p><strong>${t.adminDate} :</strong> ${date}</p>
+                    <p><strong>${t.adminTime} :</strong> ${time}</p>
+                    <p><strong>${t.adminDescription} :</strong></p>
+                    <p>${description}</p>
+                `,
+                attachments,
                 t
             )
         ]);
@@ -157,7 +170,15 @@ const translations = {
         contactSubject: "Votre Demande de Contact - Bâti Québec",
         contactMessage: (firstName) => `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`,
         rdvSubject: "Confirmation de Rendez-vous - Bâti Québec",
-        rdvMessage: (date, time) => `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`,
+        rdvMessage: (firstName, lastName, date, time, description) => `
+  <h3>Bonjour ${firstName} ${lastName},</h3>
+  <p>Votre rendez-vous est confirmé pour le <strong>${date}</strong> à <strong>${time}</strong>.</p>
+  <p><strong>Description :</strong></p>
+  <p>${description}</p>
+  <p>Merci de votre confiance,<br/>L’équipe de Bâti Québec</p>
+`,
+        adminRdvIntro: (firstName, lastName) => `<h3>RDV pris par ${firstName} ${lastName}</h3>`,
+
         rdvAlreadyTaken: "Ce créneau est déjà réservé.",
         adminContactSubject: "Nouvelle Demande de Contact",
         adminContactIntro: (firstName, lastName) => `<h3>Nouveau message de ${firstName} ${lastName}</h3>`,
@@ -166,7 +187,7 @@ const translations = {
         erreuremail: "❌ Email error:",
         emailreussi: "✅ Email sent to",
         adminRdvSubject: "Nouveau RDV Réservé",
-        adminRdvIntro: (firstName, lastName) => `<h3>RDV pris par ${firstName} ${lastName}</h3>`,
+
         adminDate: "Date",
         adminTime: "Heure"
 
@@ -179,7 +200,7 @@ const translations = {
         contactSubject: "Your Contact Request - Bâti Québec",
         contactMessage: (firstName) => `<p>Thank you ${firstName}, we have received your message.</p>`,
         rdvSubject: "Appointment Confirmation - Bâti Québec",
-        rdvMessage: (date, time) => `<p>Your appointment is confirmed for ${date} at ${time}.</p>`,
+
         rdvAlreadyTaken: "This time slot is already booked.",
         adminContactSubject: "New Contact Request",
         adminContactIntro: (firstName, lastName) => `<h3>New message from ${firstName} ${lastName}</h3>`,
@@ -188,7 +209,15 @@ const translations = {
         emailreussi: "✅ Email envoyé à",
         adminDescription: "Description",
         adminRdvSubject: "New Appointment Booked",
+        rdvMessage: (firstName, lastName, date, time, description) => `
+        <h3>Hello ${firstName} ${lastName},</h3>
+        <p>Your appointment is confirmed for <strong>${date}</strong> at <strong>${time}</strong>.</p>
+        <p><strong>Description:</strong></p>
+        <p>${description}</p>
+        <p>Thank you for your trust,<br/>The Bâti Québec team</p>
+      `,
         adminRdvIntro: (firstName, lastName) => `<h3>Appointment booked by ${firstName} ${lastName}</h3>`,
+
         adminDate: "Date",
         adminTime: "Time"
 

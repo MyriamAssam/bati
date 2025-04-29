@@ -51,9 +51,9 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
 
     try {
         await sgMail.send(msg);
-        console.log(`✅ Email envoyé à ${to}`);
+        console.log(`${t.emailreussi} ${to}`);
     } catch (error) {
-        console.error("❌ Erreur lors de l'envoi de l'email:", error.response?.body || error.message);
+        console.error(t.emailerreur, error.response?.body || error.message);
     }
 };
 
@@ -71,12 +71,24 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
 
         await Promise.all([
             sendEmail(email, t.contactSubject, "", t.contactMessage(firstName)),
-            sendEmail("mimimontmo2@gmail.com", "Nouvelle Demande de Contact", "", `<p>Nouveau message de ${firstName} ${lastName}.</p>`, attachments)
+            sendEmail(
+                "mimimontmo2@gmail.com",
+                t.adminContactSubject,
+                "",
+                `
+                ${t.adminContactIntro(firstName, lastName)}
+                <p><strong>${t.adminEmail} :</strong> ${email}</p>
+                <p><strong>${t.adminDescription} :</strong></p>
+                <p>${description}</p>
+              `,
+                attachments
+            )
         ]);
+
 
         res.status(201).json({ message: t.contactSuccess });
     } catch (error) {
-        console.error("❌ Erreur de contact :", error);
+        console.error(t.contactError, error);
         res.status(500).json({ message: t.contactError });
     }
 });
@@ -101,12 +113,24 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
 
         await Promise.all([
             sendEmail(email, t.rdvSubject, "", t.rdvMessage(date, time)),
-            sendEmail("mimimontmo2@gmail.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
+            sendEmail(
+                "mimimontmo2@gmail.com",
+                t.adminRdvSubject,
+                "",
+                `
+                ${t.adminRdvIntro(firstName, lastName)}
+                <p><strong>${t.adminEmail} :</strong> ${email}</p>
+                <p><strong>${t.adminDate} :</strong> ${date}</p>
+                <p><strong>${t.adminTime} :</strong> ${time}</p>
+                <p><strong>${t.adminDescription} :</strong></p>
+                <p>${description}</p>
+              `
+            )
         ]);
 
         res.status(201).json({ message: t.rdvSuccess });
     } catch (error) {
-        console.error("❌ Erreur RDV :", error);
+        console.error(t.rdvError, error);
         res.status(500).json({ message: t.rdvError });
     }
 });
@@ -130,7 +154,18 @@ const translations = {
         contactMessage: (firstName) => `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`,
         rdvSubject: "Confirmation de Rendez-vous - Bâti Québec",
         rdvMessage: (date, time) => `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`,
-        rdvAlreadyTaken: "Ce créneau est déjà réservé."
+        rdvAlreadyTaken: "Ce créneau est déjà réservé.",
+        adminContactSubject: "Nouvelle Demande de Contact",
+        adminContactIntro: (firstName, lastName) => `<h3>Nouveau message de ${firstName} ${lastName}</h3>`,
+        adminEmail: "Email",
+        adminDescription: "Description",
+        erreuremail: "❌ Email error:",
+        emailreussi: "✅ Email sent to",
+        adminRdvSubject: "Nouveau RDV Réservé",
+        adminRdvIntro: (firstName, lastName) => `<h3>RDV pris par ${firstName} ${lastName}</h3>`,
+        adminDate: "Date",
+        adminTime: "Heure"
+
     },
     en: {
         contactSuccess: "✅ Contact sent successfully!",
@@ -141,7 +176,18 @@ const translations = {
         contactMessage: (firstName) => `<p>Thank you ${firstName}, we have received your message.</p>`,
         rdvSubject: "Appointment Confirmation - Bâti Québec",
         rdvMessage: (date, time) => `<p>Your appointment is confirmed for ${date} at ${time}.</p>`,
-        rdvAlreadyTaken: "This time slot is already booked."
+        rdvAlreadyTaken: "This time slot is already booked.",
+        adminContactSubject: "New Contact Request",
+        adminContactIntro: (firstName, lastName) => `<h3>New message from ${firstName} ${lastName}</h3>`,
+        adminEmail: "Email",
+        erreuremail: "❌ Erreur lors de l'envoi de l'email:",
+        emailreussi: "✅ Email envoyé à",
+        adminDescription: "Description",
+        adminRdvSubject: "New Appointment Booked",
+        adminRdvIntro: (firstName, lastName) => `<h3>Appointment booked by ${firstName} ${lastName}</h3>`,
+        adminDate: "Date",
+        adminTime: "Time"
+
     }
 };
 

@@ -50,8 +50,12 @@ const Rdv = () => {
         try {
             const response = await fetch(`${API_URL}/api/rdv`, {
                 method: "POST",
+                headers: {
+                    'Accept-Language': i18n.language || 'fr'  // <- Ajout clé ici
+                },
                 body: formDataObj
             });
+
 
             const data = await response.json();
 
@@ -70,7 +74,7 @@ const Rdv = () => {
     return (
         <div className="page-content form-layout">
             <form className="form-container fade-in page-content" onSubmit={handleSubmit} >
-                <h2>Prenez un rendez-vous pour vos projets</h2>
+                <h2> {t("rdvprojets")}</h2>
 
                 <div style={fieldStyle}>
                     <label>{t("first_name")}</label>

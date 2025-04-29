@@ -65,5 +65,6 @@
     "message_success_contact": "✅ Nous vous contacterons dès que possible !",
     "erreur enregistrement ": "❌ Erreur lors de l'enregistrement.",
     "message_success_rdv": "✅ Rendez-vous pris avec succès !",
-    "erreur serveur": "❌ Problème de connexion avec le serveur."
+    "erreur serveur": "❌ Problème de connexion avec le serveur.",
+    "rdvprojets": "Prenez un rendez-vous pour vos projets"
 }

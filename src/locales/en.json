@@ -66,5 +66,6 @@
     "message_success_contact": "✅ We will contact you as soon as possible!",
     "erreur enregistrement": "❌ Error when saving",
     "message_success_rdv": "✅Appointment taken !",
-    "erreur serveur": "❌ Problem with the server"
+    "erreur serveur": "❌ Problem with the server",
+    "rdvprojets": "Take an appointment for your projects"
 }

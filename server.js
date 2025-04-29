@@ -33,8 +33,7 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Fonction pour envoyer un email
-const sendEmail = async (to, subject, text, html, attachments = []) => {
+const sendEmail = async (to, subject, text, html, attachments = [], t = null) => {
     const msg = {
         to,
         from: process.env.EMAIL_SENDER,
@@ -51,11 +50,12 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
 
     try {
         await sgMail.send(msg);
-        console.log(`${t.emailreussi} ${to}`);
+        console.log(`${t ? t.emailreussi : '✅ Email envoyé à'} ${to}`);
     } catch (error) {
-        console.error(t.emailerreur, error.response?.body || error.message);
+        console.error(t ? t.erreuremail : '❌ Erreur email :', error.response?.body || error.message);
     }
 };
+
 
 // Route pour le contact
 app.post("/api/contact", upload.array("files", 5), async (req, res) => {
@@ -70,7 +70,7 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
         }));
 
         await Promise.all([
-            sendEmail(email, t.contactSubject, "", t.contactMessage(firstName)),
+            sendEmail(email, t.contactSubject, "", t.contactMessage(firstName), [], t),
             sendEmail(
                 "mimimontmo2@gmail.com",
                 t.adminContactSubject,
@@ -81,9 +81,11 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
                 <p><strong>${t.adminDescription} :</strong></p>
                 <p>${description}</p>
               `,
-                attachments
+                attachments,
+                t
             )
         ]);
+
 
 
         res.status(201).json({ message: t.contactSuccess });
@@ -112,7 +114,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
         await newRdv.save();
 
         await Promise.all([
-            sendEmail(email, t.rdvSubject, "", t.rdvMessage(date, time)),
+            sendEmail(email, t.rdvSubject, "", t.rdvMessage(date, time), [], t),
             sendEmail(
                 "mimimontmo2@gmail.com",
                 t.adminRdvSubject,
@@ -124,7 +126,9 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
                 <p><strong>${t.adminTime} :</strong> ${time}</p>
                 <p><strong>${t.adminDescription} :</strong></p>
                 <p>${description}</p>
-              `
+              `,
+                [],
+                t
             )
         ]);
 

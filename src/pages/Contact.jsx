@@ -29,6 +29,8 @@ const Contact = () => {
         });
     };
 
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -43,27 +45,32 @@ const Contact = () => {
             formDataObj.append("files", file);
         });
 
-        const API_URL = import.meta.env.VITE_API_URL;  // ✅ Prend l'URL depuis .env
+        const API_URL = import.meta.env.VITE_API_URL;
 
         try {
-            const response = await fetch(`${API_URL}/api/contact`, {  // ✅ Utilisation dynamique de l'URL
+            const response = await fetch(`${API_URL}/api/contact`, {
                 method: "POST",
+                headers: {
+                    'Accept-Language': i18n.language || 'fr' // ✅ ici on ajoute Accept-Language
+                    // ATTENTION: on n'ajoute pas "Content-Type" quand on envoie du FormData
+                },
                 body: formDataObj
             });
 
             const data = await response.json();
 
             if (response.ok) {
-                setMessage({ type: "success", text: "✅ Nous vous contacterons dès que possible !" });
+                setMessage({ type: "success", text: t("message_success_contact") });
                 setTimeout(() => setMessage(null), 5000);
             } else {
-                setMessage({ type: "error", text: data.message || "❌ Erreur lors de l'enregistrement." });
+                setMessage({ type: "error", text: t("erreur enregistrement") });
             }
         } catch (error) {
             console.error("Error:", error);
-            setMessage({ type: "error", text: "❌ Problème de connexion avec le serveur." });
+            setMessage({ type: "error", text: t("erreur serveur") });
         }
     };
+
 
     return (
         <div className="page-content form-layout">

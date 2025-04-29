@@ -62,5 +62,9 @@
     "Bâti Québec Soumissions": "Bâti Québec Submissions",
     "Pour estimer les prix de vos projets, téléchargez l'application": "To estimate the cost of your projects, download the app",
     "Bâti Québec Estimation": "Bâti Québec Estimation",
-    "ou téléchargez l'application": "or download "
+    "ou téléchargez l'application": "or download ",
+    "message_success_contact": "✅ We will contact you as soon as possible!",
+    "erreur enregistrement": "❌ Error when saving",
+    "message_success_rdv": "✅Appointment taken !",
+    "erreur serveur": "❌ Problem with the server"
 }

@@ -56,14 +56,14 @@ const Rdv = () => {
             const data = await response.json();
 
             if (response.ok) {
-                setMessage({ type: "success", text: "✅ Rendez-vous pris avec succès !" });
+                setMessage({ type: "success", text: t("message_success_rdv") });
                 setTimeout(() => setMessage(null), 5000);
             } else {
-                setMessage({ type: "error", text: data.message || "❌ Erreur lors de l'enregistrement." });
+                setMessage({ type: "error", text: data.message || t("erreur enregistrement") });
             }
         } catch (error) {
             console.error("Erreur:", error);
-            setMessage({ type: "error", text: "❌ Problème de connexion avec le serveur." });
+            setMessage({ type: "error", text: t("erreur serveur") });
         }
     };
 

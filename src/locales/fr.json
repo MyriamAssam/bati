@@ -61,5 +61,9 @@
     "Bâti Québec Soumissions": "Bâti Québec Soumissions",
     "Pour estimer les prix de vos projets, téléchargez l'application": "Pour estimer les prix de vos projets, téléchargez l'application",
     "Bâti Québec Estimation": "Bâti Québec Estimation",
-    "ou téléchargez l'application": " ou téléchargez l'application "
+    "ou téléchargez l'application": " ou téléchargez l'application ",
+    "message_success_contact": "✅ Nous vous contacterons dès que possible !",
+    "erreur enregistrement ": "❌ Erreur lors de l'enregistrement.",
+    "message_success_rdv": "✅ Rendez-vous pris avec succès !",
+    "erreur serveur": "❌ Problème de connexion avec le serveur."
 }

@@ -59,6 +59,9 @@ const sendEmail = async (to, subject, text, html, attachments = []) => {
 
 // Route pour le contact
 app.post("/api/contact", upload.array("files", 5), async (req, res) => {
+    const lang = req.headers['accept-language'] || 'fr';
+    const t = translations[lang] || translations['fr'];
+
     try {
         const { firstName, lastName, email, description } = req.body;
         const attachments = req.files.map(file => ({
@@ -66,46 +69,48 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
             path: file.path
         }));
 
-        // Envoi des emails
         await Promise.all([
-            sendEmail(email, "Votre Demande de Contact - Bâti Québec", "", `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`),
+            sendEmail(email, t.contactSubject, "", t.contactMessage(firstName)),
             sendEmail("mimimontmo2@hotmail.com", "Nouvelle Demande de Contact", "", `<p>Nouveau message de ${firstName} ${lastName}.</p>`, attachments)
         ]);
 
-        res.status(201).json({ message: "✅ Contact envoyé avec succès !" });
+        res.status(201).json({ message: t.contactSuccess });
     } catch (error) {
         console.error("❌ Erreur de contact :", error);
-        res.status(500).json({ message: "❌ Erreur lors du traitement de la demande." });
+        res.status(500).json({ message: t.contactError });
     }
 });
 
+
 // Route pour les rendez-vous
 app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
+    const lang = req.headers['accept-language'] || 'fr';
+    const t = translations[lang] || translations['fr'];
+
     try {
         const { firstName, lastName, email, description, date, time } = req.body;
 
-        // Vérification si le créneau est libre
         const existingRdv = await Rdv.findOne({ date, time });
         if (existingRdv) {
-            return res.status(400).json({ message: "Ce créneau est déjà réservé." });
+            return res.status(400).json({ message: t.rdvAlreadyTaken });
         }
 
         const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
         const newRdv = new Rdv({ ...req.body, files: fileUrls });
         await newRdv.save();
 
-        // Envoi des emails
         await Promise.all([
-            sendEmail(email, "Confirmation de Rendez-vous - Bâti Québec", "", `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`),
+            sendEmail(email, t.rdvSubject, "", t.rdvMessage(date, time)),
             sendEmail("mimimontmo2@hotmail.com", "Nouveau RDV Réservé", "", `<p>RDV pris par ${firstName} ${lastName}.</p>`)
         ]);
 
-        res.status(201).json({ message: "✅ RDV enregistré et confirmé par email." });
+        res.status(201).json({ message: t.rdvSuccess });
     } catch (error) {
         console.error("❌ Erreur RDV :", error);
-        res.status(500).json({ message: "❌ Problème lors de l'enregistrement." });
+        res.status(500).json({ message: t.rdvError });
     }
 });
+
 
 // Servir les fichiers statiques depuis "dist" après les routes API
 app.use(express.static(path.join(path.resolve(), "dist")));
@@ -115,6 +120,30 @@ app.get("*", (req, res) => {
 app.get("/api/health", (req, res) => {
     res.json({ message: "✅ Serveur opérationnel !" });
 });
+const translations = {
+    fr: {
+        contactSuccess: "✅ Contact envoyé avec succès !",
+        contactError: "❌ Erreur lors du traitement de la demande.",
+        rdvSuccess: "✅ RDV enregistré et confirmé par email.",
+        rdvError: "❌ Problème lors de l'enregistrement.",
+        contactSubject: "Votre Demande de Contact - Bâti Québec",
+        contactMessage: (firstName) => `<p>Merci ${firstName}, nous avons bien reçu votre message.</p>`,
+        rdvSubject: "Confirmation de Rendez-vous - Bâti Québec",
+        rdvMessage: (date, time) => `<p>Votre RDV est confirmé pour le ${date} à ${time}.</p>`,
+        rdvAlreadyTaken: "Ce créneau est déjà réservé."
+    },
+    en: {
+        contactSuccess: "✅ Contact sent successfully!",
+        contactError: "❌ Error while processing the request.",
+        rdvSuccess: "✅ Appointment registered and confirmed by email.",
+        rdvError: "❌ Error while saving the appointment.",
+        contactSubject: "Your Contact Request - Bâti Québec",
+        contactMessage: (firstName) => `<p>Thank you ${firstName}, we have received your message.</p>`,
+        rdvSubject: "Appointment Confirmation - Bâti Québec",
+        rdvMessage: (date, time) => `<p>Your appointment is confirmed for ${date} at ${time}.</p>`,
+        rdvAlreadyTaken: "This time slot is already booked."
+    }
+};
 
 
 // Démarrage du serveur

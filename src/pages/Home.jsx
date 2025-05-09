@@ -188,7 +188,7 @@ const Home = () => {
                                 { label: "Agrandissement", image: "./images/pexels-curtis-adams-1694007-4092030.jpg" },
                                 { label: "Cuisine", image: "./images/pexels-lamiko-3616759.jpg" },
                                 { label: "Rénovation après sinistre", image: "./images/pexels-kseniachernaya-5768107.jpg" },
-                                { label: "Rénovation pour personne à mobilité réduite", image: "./images/pexels-cottonbro-6583355" },
+                                { label: "Rénovation pour personne à mobilité réduite", image: "./images/pexels-marcus-aurelius-4063493.jpg" },
                                 { label: "Experts en sinistre", image: "./images/pexels-shawlw-804394.jpg" },
                                 { label: "Construction et rénovation de garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" },
                             ].map((service, i) => (

@@ -171,7 +171,7 @@ const Home = () => {
                 }}>
 
                     <section style={{ backgroundColor: "#ECE2D0", padding: "60px 20px", textAlign: "center" }}>
-                        <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>Services offerts : </h2>
+                        <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>{t("Services offerts")} : </h2>
 
                         <div
                             style={{

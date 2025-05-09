@@ -172,14 +172,17 @@ const Home = () => {
                 }}>
 
                     <section style={{ backgroundColor: "#ECE2D0", padding: "60px 20px", textAlign: "center" }}>
-                        <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>Nos services</h2>
+                        <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>Services offerts : </h2>
 
-                        <div style={{
-                            display: "grid",
-                            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-                            gap: "20px",
-                            justifyItems: "center"
-                        }}>
+                        <div
+                            style={{
+                                display: "grid",
+                                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+                                gap: "25px",
+                                justifyItems: "center",
+                                padding: "0 10px"
+                            }}
+                        >
                             {[
                                 { label: "Commercial, institutionnel et industriel", image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
                                 { label: "Rénovation", image: "./images/pexels-cottonbro-6583355.jpg" },
@@ -188,44 +191,73 @@ const Home = () => {
                                 { label: "Agrandissement", image: "./images/pexels-curtis-adams-1694007-4092030.jpg" },
                                 { label: "Cuisine", image: "./images/pexels-lamiko-3616759.jpg" },
                                 { label: "Rénovation après sinistre", image: "./images/pexels-kseniachernaya-5768107.jpg" },
-                                { label: "Rénovation pour personne à mobilité réduite", image: "./images/pexels-marcus-aurelius-4063493.jpg" },
+                                { label: "Accessibilité PMR", image: "./images/pexels-marcus-aurelius-4063493.jpg" },
                                 { label: "Experts en sinistre", image: "./images/pexels-shawlw-804394.jpg" },
-                                { label: "Construction et rénovation de garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" }
                             ].map((service, i) => (
-                                <div key={i} style={{
-                                    backgroundImage: `url(${service.image})`,
-                                    backgroundSize: "cover",
-                                    backgroundPosition: "center",
-                                    width: "100%",
-                                    minHeight: "200px",
-                                    borderRadius: "8px",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    color: "white",
-                                    fontWeight: "bold",
-                                    fontSize: "1.2rem",
-                                    textShadow: "0 2px 4px rgba(0,0,0,0.7)"
-                                }}>
-                                    {service.label}
+                                <div
+                                    key={i}
+                                    style={{
+                                        position: "relative",
+                                        width: "100%",
+                                        minHeight: "220px",
+                                        borderRadius: "12px",
+                                        overflow: "hidden",
+                                        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                                        cursor: "pointer",
+                                        transition: "transform 0.3s ease",
+                                    }}
+                                    onMouseOver={e => (e.currentTarget.style.transform = "scale(1.02) rotate(-0.5deg)")}
+                                    onMouseOut={e => (e.currentTarget.style.transform = "scale(1) rotate(0)")}
+                                >
+                                    <img
+                                        src={service.image}
+                                        alt={service.label}
+                                        style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "cover",
+                                            display: "block"
+                                        }}
+                                    />
+                                    <div
+                                        style={{
+                                            position: "absolute",
+                                            bottom: 0,
+                                            width: "100%",
+                                            padding: "10px",
+                                            background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
+                                            color: "#fff",
+                                            fontWeight: "bold",
+                                            textAlign: "center"
+                                        }}
+                                    >
+                                        {service.label}
+                                    </div>
                                 </div>
                             ))}
 
                             {/* Et plus encore... */}
-                            <div style={{
-                                backgroundColor: "#1c1c1c",
-                                borderRadius: "8px",
-                                padding: "20px",
-                                color: "white",
-                                display: "flex",
-                                flexDirection: "column",
-                                justifyContent: "center",
-                                alignItems: "center"
-                            }}>
-                                <h3 style={{ marginBottom: "15px" }}>Et plus encore...</h3>
-
+                            <div
+                                style={{
+                                    backgroundColor: "#3B2F2F",
+                                    color: "white",
+                                    borderRadius: "12px",
+                                    padding: "30px 20px",
+                                    textAlign: "center",
+                                    fontWeight: "bold",
+                                    fontSize: "1.1rem",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    height: "220px",
+                                    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                                }}
+                            >
+                                <span style={{ lineHeight: "1.5" }}>Et encore plus de services<br />sur demande&nbsp;!</span>
                             </div>
                         </div>
+
                     </section>
 
 

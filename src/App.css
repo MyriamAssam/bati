@@ -27,9 +27,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
+  /* RÉDUIT pour coller davantage */
   z-index: 1000;
 }
+
 
 .logo-apchq,
 .logo-rbq {
@@ -44,7 +46,7 @@ main {
   cursor: pointer;
   pointer-events: all;
   width: auto;
-  margin-right: -10px;
+
 
   height: 70px;
   white-space: nowrap;
@@ -154,7 +156,7 @@ main {
     cursor: pointer;
     pointer-events: all;
     width: auto;
-    margin-right: 900px;
+    margin-right: 0px;
 
     height: 70px;
     white-space: nowrap;

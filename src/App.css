@@ -666,6 +666,17 @@ header {
   color: #AD8A64;
 }
 
+.card-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .form-container {
   width: 60%;
   max-width: 800px;

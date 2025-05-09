@@ -18,9 +18,7 @@ const Home = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     useEffect(() => {
-        const fadeInElements = document.querySelectorAll(".fade-in");
-
-        if (fadeInElements.length === 0) return;
+        const cards = document.querySelectorAll(".card-fade");
 
         const observer = new IntersectionObserver(
             (entries) => {
@@ -34,12 +32,13 @@ const Home = () => {
             { threshold: 0.1 }
         );
 
-        fadeInElements.forEach((element) => observer.observe(element));
+        cards.forEach((card) => observer.observe(card));
 
         return () => {
-            fadeInElements.forEach((element) => observer.unobserve(element));
+            cards.forEach((card) => observer.unobserve(card));
         };
     }, []);
+
 
     return (
         <div style={{
@@ -184,19 +183,20 @@ const Home = () => {
                             }}
                         >
                             {[
-                                { label: "Commercial, institutionnel et industriel", image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
-                                { label: "Rénovation", image: "./images/pexels-cottonbro-6583355.jpg" },
-                                { label: "Rénovation commerciale", image: "./images/pexels-bidvine-517980-1249611.jpg" },
-                                { label: "Sous-sol", image: "./images/pexels-rquiros-2219024.jpg" },
-                                { label: "Agrandissement", image: "./images/pexels-curtis-adams-1694007-4092030.jpg" },
-                                { label: "Cuisine", image: "./images/pexels-lamiko-3616759.jpg" },
-                                { label: "Rénovation après sinistre", image: "./images/pexels-kseniachernaya-5768107.jpg" },
-                                { label: "Accessibilité PMR", image: "./images/pexels-marcus-aurelius-4063493.jpg" },
-                                { label: "Experts en sinistre", image: "./images/pexels-shawlw-804394.jpg" },
-                                { label: "Garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" }
+                                { label: t("Commercial"), image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
+                                { label: t("Rénovation"), image: "./images/pexels-cottonbro-6583355.jpg" },
+                                { label: t("Rénovation commerciale"), image: "./images/pexels-bidvine-517980-1249611.jpg" },
+                                { label: t("Sous-sol"), image: "./images/pexels-rquiros-2219024.jpg" },
+                                { label: t("Agrandissement"), image: "./images/pexels-curtis-adams-1694007-4092030.jpg" },
+                                { label: t("Cuisine"), image: "./images/pexels-lamiko-3616759.jpg" },
+                                { label: t("Rénovation après sinistre"), image: "./images/pexels-kseniachernaya-5768107.jpg" },
+                                { label: t("Accessibilité PMR"), image: "./images/pexels-marcus-aurelius-4063493.jpg" },
+                                { label: t("Experts en sinistre"), image: "./images/pexels-shawlw-804394.jpg" },
+                                { label: t("Garage détaché (jusqu'à 600 m²)"), image: "./images/pexels-cottonbro-4488660.jpg" }
                             ].map((service, i) => (
                                 <div
                                     key={i}
+                                    className="card-fade"
                                     style={{
                                         position: "relative",
                                         width: "100%",
@@ -210,6 +210,7 @@ const Home = () => {
                                     onMouseOver={e => (e.currentTarget.style.transform = "scale(1.02) rotate(-0.5deg)")}
                                     onMouseOut={e => (e.currentTarget.style.transform = "scale(1) rotate(0)")}
                                 >
+
                                     <img
                                         src={service.image}
                                         alt={service.label}
@@ -254,7 +255,7 @@ const Home = () => {
                                     boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
                                 }}
                             >
-                                <span style={{ lineHeight: "1.5" }}>Et encore plus de services<br />sur demande&nbsp;!</span>
+                                <span style={{ lineHeight: "1.5" }}>{t("servicemessage")}<br />{t("demande")}&nbsp;!</span>
                             </div>
                         </div>
 
@@ -264,7 +265,8 @@ const Home = () => {
                     <div className="fixed-logos">
                         <button className="logo-apchq">
                             <img src="/images/logo_apchq_full-removebg-preview.png" alt="Logo APCHQ" />
-                            <p>Entrepreneurs membres de l'APCHQ</p>
+                            <p>{t("entrepreneurs")}</p>
+
                         </button>
                         <button className="logo-rbq">
                             <p>RBQ : 5820-5246-01</p>

@@ -66,5 +66,15 @@
     "erreur enregistrement ": "❌ Erreur lors de l'enregistrement.",
     "message_success_rdv": "✅ Rendez-vous pris avec succès !",
     "erreur serveur": "❌ Problème de connexion avec le serveur.",
-    "rdvprojets": "Prenez un rendez-vous pour vos projets"
+    "rdvprojets": "Prenez un rendez-vous pour vos projets",
+    "Commercial": "institutionnel et industriel",
+    "Rénovation": "Rénovation",
+    "Rénovation commerciale": "Rénovation commerciale",
+    "Sous-sol": "Sous-sol",
+    "Agrandissement": "Agrandissement",
+    "Cuisine": "Cuisine",
+    "Rénovation après sinistre": "Rénovation après sinistre",
+    "Accessibilité PMR": "Accessibilité PMR",
+    "Experts en sinistre": "Experts en sinistre",
+    "Garage détaché (jusqu'à 600 m²)": "Garage détaché (jusqu'à 600 m²)"
 }

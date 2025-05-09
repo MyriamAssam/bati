@@ -67,5 +67,15 @@
     "erreur enregistrement": "❌ Error when saving",
     "message_success_rdv": "✅Appointment taken !",
     "erreur serveur": "❌ Problem with the server",
-    "rdvprojets": "Take an appointment for your projects"
+    "rdvprojets": "Take an appointment for your projects",
+    "Commercial": "Commercial, Institutional, and Industrial",
+    "Rénovation": "Renovation",
+    "Rénovation commerciale": "Commercial Renovation",
+    "Sous-sol": "Basement",
+    "Agrandissement": "Extension",
+    "Cuisine": "Kitchen",
+    "Rénovation après sinistre": "Post-Disaster Renovation",
+    "Accessibilité PMR": "Accessibility for People with Disabilities",
+    "Experts en sinistre": "Claims Adjusters",
+    "Garage détaché (jusqu'à 600 m²)": "Detached Garage (up to 600 m²)"
 }

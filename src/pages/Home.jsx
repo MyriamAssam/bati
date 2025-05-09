@@ -171,114 +171,81 @@ const Home = () => {
                     marginTop: "40px"
                 }}>
 
-                    <h2 style={{ fontSize: "30px", marginBottom: "35px" }}> {t("services")}</h2>
+                    <section style={{ backgroundColor: "#ECE2D0", padding: "60px 20px", textAlign: "center" }}>
+                        <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>Nos services</h2>
 
-                    <div className="services-container" style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        gap: "160px",
-                        flexWrap: "wrap"
-                    }}>
-
-
-                        { }
-                        <div style={{ maxWidth: "300px", textAlign: "center" }}>
-                            <FaHardHat size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services2")}</h3>
-                            <p>{t("services3")}</p>
-                        </div>
-
-                        { }
-                        <div style={{ maxWidth: "300px", textAlign: "center" }}>
-                            <FiHome size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services4")}</h3>
-                            <p>{t("services5")}</p>
-                        </div>
-
-                        { }
-                        <div style={{ maxWidth: "300px" }}>
-                            <FaBuilding size={50} style={{ color: "black" }} />
-                            <h3 style={{ fontWeight: "bold", marginTop: "12px" }}>{t("services6")}</h3>
-                            <p>{t("services7")}</p>
-                        </div>
-                        { }
-
-
-
-
-
-
-
-                        {/* Section Types de Travaux avec effet de fondu */}
-                        <section className="fade-in">
-                            <h2>Types de Travaux</h2>
-                            <div className="travaux-container">
-                                <div>
-                                    <IoBusinessSharp size={50} />
-                                    <h3>Commercial, institutionnel et industriel</h3>
+                        <div style={{
+                            display: "grid",
+                            gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                            gap: "20px",
+                            justifyItems: "center"
+                        }}>
+                            {[
+                                { label: "Commercial, institutionnel et industriel", image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
+                                { label: "Rénovation", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Rénovation commerciale", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Sous-sol", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Agrandissement", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Cuisine", image: "./images/pexels-lamiko-3616759.jpg" },
+                                { label: "Rénovation après sinistre", image: "./images/pexels-monica-3562689.jpg" },
+                                { label: "Rénovation pour personne à mobilité réduite", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Experts en sinistre", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Construction et rénovation de garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" },
+                            ].map((service, i) => (
+                                <div key={i} style={{
+                                    backgroundImage: `url(${service.image})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    width: "100%",
+                                    minHeight: "200px",
+                                    borderRadius: "8px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    color: "white",
+                                    fontWeight: "bold",
+                                    fontSize: "1.2rem",
+                                    textShadow: "0 2px 4px rgba(0,0,0,0.7)"
+                                }}>
+                                    {service.label}
                                 </div>
-                                <div>
-                                    <IoHammerSharp size={50} />
-                                    <h3>Rénovation</h3>
-                                </div>
-                                <div>
-                                    <IoHammerOutline size={50} />
-                                    <h3>Rénovation commerciale</h3>
-                                </div>
-                                <div>
-                                    <FaHouseDamage size={50} />
-                                    <h3>Sous-sol</h3>
-                                </div>
+                            ))}
 
-                                <div>
-                                    <FaWarehouse size={50} style={{ color: "black" }} />
-                                    <h3>Agrandissement</h3>
-                                </div>
+                            {/* Et plus encore... */}
+                            <div style={{
+                                backgroundColor: "#1c1c1c",
+                                borderRadius: "8px",
+                                padding: "20px",
+                                color: "white",
+                                display: "flex",
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                alignItems: "center"
+                            }}>
+                                <h3 style={{ marginBottom: "15px" }}>Et plus encore...</h3>
 
-                                <div>
-                                    <FaKitchenSet size={50} style={{ color: "black" }} />
-                                    <h3>Cuisine</h3>
-                                </div>
-
-                                <div>
-                                    <FiCloudDrizzle size={50} style={{ color: "black" }} />
-                                    <h3>Rénovation après sinistre</h3>
-                                </div>
-
-                                <div>
-                                    <BiHandicap size={50} style={{ color: "black" }} />
-                                    <h3>Rénovation pour personne à mobilité réduite</h3>
-                                </div>
-
-                                <div>
-                                    <FiUser size={50} style={{ color: "black" }} />
-                                    <h3>Experts en sinistre</h3>
-                                </div>
-
-                                <div>
-                                    <GiHomeGarage size={50} style={{ color: "black" }} />
-                                    <h3>Construction et rénovation de garage détaché (jusqu'à 600 m²)</h3>
-                                </div>
                             </div>
-                        </section>
-
-                        <div className="fixed-logos">
-                            <button className="logo-apchq">
-                                <img src="/images/logo_apchq_full-removebg-preview.png" alt="Logo APCHQ" />
-                                <p>Entrepreneurs membres de l'APCHQ</p>
-                            </button>
-                            <button className="logo-rbq">
-                                <p>RBQ : 5820-5246-01</p>
-                                <img src="/images/rbqlogo-removebg-preview.png" alt="Logo RBQ" />
-
-                            </button>
                         </div>
+                    </section>
 
+
+                    <div className="fixed-logos">
+                        <button className="logo-apchq">
+                            <img src="/images/logo_apchq_full-removebg-preview.png" alt="Logo APCHQ" />
+                            <p>Entrepreneurs membres de l'APCHQ</p>
+                        </button>
+                        <button className="logo-rbq">
+                            <p>RBQ : 5820-5246-01</p>
+                            <img src="/images/rbqlogo-removebg-preview.png" alt="Logo RBQ" />
+
+                        </button>
                     </div>
-                </section>
-            </main>
-        </div>
 
+
+                </section>
+            </main >
+
+        </div >
     );
 };
 

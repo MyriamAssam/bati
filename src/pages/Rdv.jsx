@@ -91,7 +91,9 @@ const Rdv = () => {
                     <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
                 </div>
 
-                <div style={fieldStyle}>
+                <div
+
+                    style={fieldStyle}>
                     <label>{t("date")}</label>
                     <input type="date" name="date" value={formData.date} onChange={handleChange} required style={inputStyle} />
                 </div>

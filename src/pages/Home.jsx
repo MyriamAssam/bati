@@ -182,14 +182,14 @@ const Home = () => {
                         }}>
                             {[
                                 { label: "Commercial, institutionnel et industriel", image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
-                                { label: "Rénovation", image: "./images/pexels-cottonbro-4488660.jpg" },
-                                { label: "Rénovation commerciale", image: "./images/pexels-cottonbro-4488660.jpg" },
-                                { label: "Sous-sol", image: "./images/pexels-rquiros-2219024" },
-                                { label: "Agrandissement", image: "./images/pexels-sevenstormphotography-439416" },
+                                { label: "Rénovation", image: "./images/pexels-cottonbro-6583355.jpg" },
+                                { label: "Rénovation commerciale", image: "./images/pexels-bidvine-517980-1249611.jpg" },
+                                { label: "Sous-sol", image: "./images/pexels-rquiros-2219024.jpg" },
+                                { label: "Agrandissement", image: "./images/pexels-curtis-adams-1694007-4092030.jpg" },
                                 { label: "Cuisine", image: "./images/pexels-lamiko-3616759.jpg" },
-                                { label: "Rénovation après sinistre", image: "./images/pexels-monica-3562689.jpg" },
+                                { label: "Rénovation après sinistre", image: "./images/pexels-kseniachernaya-5768107.jpg" },
                                 { label: "Rénovation pour personne à mobilité réduite", image: "./images/pexels-cottonbro-6583355" },
-                                { label: "Experts en sinistre", image: "./images/pexels-cottonbro-4488660.jpg" },
+                                { label: "Experts en sinistre", image: "./images/pexels-shawlw-804394.jpg" },
                                 { label: "Construction et rénovation de garage détaché (jusqu'à 600 m²)", image: "./images/pexels-cottonbro-4488660.jpg" },
                             ].map((service, i) => (
                                 <div key={i} style={{

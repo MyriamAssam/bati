@@ -1,17 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../Header.jsx";
-import { FiHome } from "react-icons/fi";
-import { FaHardHat, FaBuilding, FaHouseDamage } from "react-icons/fa";
 import '../App.css';
 import { useTranslation } from "react-i18next";
-import { IoBusinessSharp } from "react-icons/io5";
-import { IoHammerOutline, IoHammerSharp } from "react-icons/io5";
-import { FaKitchenSet } from "react-icons/fa6";
-import { FiCloudDrizzle, FiUser } from "react-icons/fi";
-import { GiHomeGarage } from "react-icons/gi";
-import { BiHandicap } from "react-icons/bi";
-import { FaWarehouse } from "react-icons/fa6";
-
 import { useEffect } from "react";
 
 const Home = () => {
@@ -166,9 +156,9 @@ const Home = () => {
                     backgroundColor: "#ECE2D0",
                     color: "black",
                     padding: "60px 20px",
-                    textAlign: "center",
-                    marginTop: "40px"
+                    textAlign: "center"
                 }}>
+
 
                     <section style={{ backgroundColor: "#ECE2D0", padding: "60px 20px", textAlign: "center" }}>
                         <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>{t("Services offerts")} : </h2>

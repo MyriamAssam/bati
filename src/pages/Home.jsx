@@ -253,9 +253,10 @@ const Home = () => {
                                     justifyContent: "center",
                                     height: "220px",
                                     boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-                                    gridColumn: "span 1",
+                                    gridColumn: "span 2",
                                     width: "100%",
-                                    minWidth: "240px" // 👈 identique à minmax(240px, 1fr)
+                                    minWidth: "480px",
+                                    maxWidth: "100%"
                                 }}
                             >
                                 <span style={{ lineHeight: "1.5" }}>
@@ -263,6 +264,7 @@ const Home = () => {
                                     {t("demande")}&nbsp;!
                                 </span>
                             </div>
+
 
                         </div>
 

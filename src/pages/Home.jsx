@@ -253,10 +253,17 @@ const Home = () => {
                                     justifyContent: "center",
                                     height: "220px",
                                     boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                                    gridColumn: "span 1",
+                                    width: "100%",
+                                    minWidth: "240px" // 👈 identique à minmax(240px, 1fr)
                                 }}
                             >
-                                <span style={{ lineHeight: "1.5" }}>{t("servicemessage")}<br />{t("demande")}&nbsp;!</span>
+                                <span style={{ lineHeight: "1.5" }}>
+                                    {t("servicemessage")}<br />
+                                    {t("demande")}&nbsp;!
+                                </span>
                             </div>
+
                         </div>
 
                     </section>

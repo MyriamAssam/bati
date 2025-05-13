@@ -58,7 +58,7 @@ const Home = () => {
                     position: "relative"
                 }}>
                     <img
-                        src="./images/reno.jpg"
+                        src="./images/pexels-tima-miroshnichenko-6615230.jpg"
                         alt="Background"
                         style={{
                             width: "100%",

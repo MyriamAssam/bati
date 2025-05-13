@@ -849,6 +849,41 @@ header {
   }
 }
 
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-logo-img {
+  width: 130px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer-section.entreprise {
+    margin-top: 10px;
+  }
+
+  .footer-logo-text {
+    margin-bottom: 5px;
+  }
+
+  .footer-logo-img {
+    width: 100px;
+    /* taille réduite sur mobile */
+    margin-bottom: 5px;
+  }
+
+  .footer-title {
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   .footer-section img {
     width: 180px;

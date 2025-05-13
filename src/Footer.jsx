@@ -15,11 +15,14 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 {/* 🏢 Section Entreprise */}
-                <div className="footer-section">
-                    <img src="/images/logoBati.jpg" alt="Logo Bâti Québec" width="130" height="130" />
-                    <h3>Bâti Québec Inc.</h3>
+                <div className="footer-section entreprise">
+                    <div className="footer-logo-text">
+                        <img src="/images/logoBati.jpg" alt="Logo Bâti Québec" className="footer-logo-img" />
+                        <h3 className="footer-title">Bâti Québec Inc.</h3>
+                    </div>
                     <p>CP 82 NDG, Montréal, Québec H4A-3P4</p>
                 </div>
+
 
                 {/* 📞 Section Contact */}
                 <div className="footer-section">

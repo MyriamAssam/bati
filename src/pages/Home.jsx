@@ -192,31 +192,30 @@ const Home = () => {
                             ))}
 
                             { }
-                            <div
-                                style={{
-                                    backgroundColor: "#3B2F2F",
-                                    color: "white",
-                                    borderRadius: "12px",
-                                    padding: "30px 20px",
-                                    textAlign: "center",
-                                    fontWeight: "bold",
-                                    fontSize: "1.1rem",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    height: "220px",
-                                    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-                                    gridColumn: "span 2",
-                                    width: "100%",
-                                    minWidth: "480px",
-                                    maxWidth: "100%"
-                                }}
-                            >
+                            <div style={{
+                                backgroundColor: "#3B2F2F",
+                                color: "white",
+                                borderRadius: "12px",
+                                padding: "30px 20px",
+                                textAlign: "center",
+                                fontWeight: "bold",
+                                fontSize: "1.1rem",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                height: "220px",
+                                boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+                                width: "100%",
+                                maxWidth: "500px",
+                                margin: "0 auto", // ✅ centre horizontalement
+                                gridColumn: "1 / -1" // ✅ occupe toute la rangée
+                            }}>
                                 <span style={{ lineHeight: "1.5" }}>
                                     {t("servicemessage")}<br />
                                     {t("demande")}&nbsp;!
                                 </span>
                             </div>
+
 
 
                         </div>

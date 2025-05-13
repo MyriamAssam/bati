@@ -4,6 +4,10 @@
   flex-grow: 1;
 }
 
+body {
+  margin-top: 80px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -28,7 +32,6 @@ main {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  /* RÉDUIT pour coller davantage */
   z-index: 1000;
 }
 
@@ -75,19 +78,17 @@ main {
 .logo-apchq img,
 .logo-rbq img {
   width: 40px;
-  /* Taille des logos */
   height: auto;
   margin-right: 10px;
   margin-left: 5px;
-  /* Espacement entre l’image et le texte */
+
 }
 
 .logo-rbq img {
   width: 40px;
-  /* Taille des logos */
   height: auto;
   margin-left: 10px;
-  /* Espacement entre l’image et le texte */
+
 }
 
 .logo-rbq p {
@@ -136,7 +137,6 @@ main {
   .logo-apchq img {
 
     width: 40px;
-    /* Taille des logos */
     height: auto;
     margin-right: 20px;
     margin-left: 20px;
@@ -394,6 +394,18 @@ body {
 
 }
 
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
 
 .text-on-image {
   position: absolute;
@@ -412,6 +424,35 @@ body {
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .fixed-logos {
+    position: static;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .logo-apchq,
+  .logo-rbq {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px 0;
+  }
+
+  .logo-rbq p,
+  .logo-apchq p {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .logo-apchq img,
+  .logo-rbq img {
+    width: 30px;
+    margin: 0 5px;
+  }
+}
 
 .card {
   padding: 2em;
@@ -610,6 +651,19 @@ header {
 
   .info-box {
     margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .footer-section {
+    width: 100%;
   }
 }
 

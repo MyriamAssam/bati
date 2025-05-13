@@ -181,47 +181,14 @@ const Home = () => {
                                 <div
                                     key={i}
                                     className="card-fade"
-                                    style={{
-                                        position: "relative",
-                                        width: "100%",
-                                        minHeight: "220px",
-                                        borderRadius: "12px",
-                                        overflow: "hidden",
-                                        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-                                        cursor: "pointer",
-                                        transition: "transform 0.3s ease",
-                                    }}
                                     onMouseOver={e => (e.currentTarget.style.transform = "scale(1.02) rotate(-0.5deg)")}
                                     onMouseOut={e => (e.currentTarget.style.transform = "scale(1) rotate(0)")}
                                 >
-
-                                    <img
-                                        src={service.image}
-                                        alt={service.label}
-                                        style={{
-                                            width: "100%",
-                                            height: "100%",
-                                            maxHeight: "140px", // <-- Ajoutez ceci
-                                            objectFit: "cover",
-                                            display: "block"
-                                        }}
-                                    />
-
-                                    <div
-                                        style={{
-                                            position: "absolute",
-                                            bottom: 0,
-                                            width: "100%",
-                                            padding: "10px",
-                                            background: "linear-gradient(to top, rgba(0,0,0,0.6), transparent)",
-                                            color: "#fff",
-                                            fontWeight: "bold",
-                                            textAlign: "center"
-                                        }}
-                                    >
-                                        {service.label}
-                                    </div>
+                                    <img src={service.image} alt={service.label} />
+                                    <div className="card-label">{service.label}</div>
                                 </div>
+
+
                             ))}
 
                             { }

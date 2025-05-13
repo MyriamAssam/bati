@@ -19,16 +19,7 @@ body {
   display: none;
 }
 
-.card-fade {
-  position: relative;
-  width: 100%;
-  min-height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
+
 
 @media (max-width: 768px) {
   .footer-certifications {
@@ -857,10 +848,36 @@ header {
 }
 
 .card-fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
+
+.card-fade img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.card-fade .card-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+}
+
 
 .card-fade.visible {
   opacity: 1;
@@ -948,22 +965,30 @@ header {
 
 @media (max-width: 768px) {
   .card-fade {
-    min-height: 140px !important;
     max-width: 320px;
-  }
-
-  .services-grid {
-    flex-direction: column !important;
-    align-items: center;
-    gap: 15px;
-    padding: 0 10px;
+    width: 100%;
+    min-height: 180px;
   }
 
   .card-fade img {
-    max-height: 140px;
+    height: 180px;
     object-fit: cover;
   }
+
+  .card-fade .card-label {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .services-grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+  }
 }
+
 
 
 

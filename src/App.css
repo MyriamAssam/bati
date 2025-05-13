@@ -908,6 +908,21 @@ header {
 }
 
 @media (max-width: 768px) {
+  .card-fade {
+    width: 100% !important;
+    max-width: 400px;
+  }
+
+  .services-grid {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 768px) {
   .footer-section img {
     width: 180px;
   }

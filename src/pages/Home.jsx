@@ -164,15 +164,8 @@ const Home = () => {
                     <section style={{ backgroundColor: "#ECE2D0", padding: "60px 20px", textAlign: "center" }}>
                         <h2 style={{ fontSize: "30px", marginBottom: "35px" }}>{t("Services offerts")} : </h2>
                         <br />
-                        <div
-                            style={{
-                                display: "grid",
-                                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                                gap: "25px",
-                                justifyItems: "center",
-                                padding: "0 10px"
-                            }}
-                        >
+                        <div className="services-grid">
+
                             {[
                                 { label: t("Commercial"), image: "./images/pexels-jeshoots-com-147458-834892.jpg" },
                                 { label: t("Rénovation"), image: "./images/pexels-cottonbro-6583355.jpg" },

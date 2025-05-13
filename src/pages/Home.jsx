@@ -201,10 +201,12 @@ const Home = () => {
                                         style={{
                                             width: "100%",
                                             height: "100%",
+                                            maxHeight: "140px", // <-- Ajoutez ceci
                                             objectFit: "cover",
                                             display: "block"
                                         }}
                                     />
+
                                     <div
                                         style={{
                                             position: "absolute",

@@ -6,7 +6,6 @@ const Footer = () => {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
 
-    // ✅ Fonction pour changer la langue avec stockage
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
         localStorage.setItem("i18nextLng", lng);
@@ -15,7 +14,6 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-container">
-
                 {/* 🏢 Section Entreprise */}
                 <div className="footer-section">
                     <img src="/images/logoBati.jpg" alt="Logo Bâti Québec" width="130" height="130" />
@@ -27,8 +25,8 @@ const Footer = () => {
                 <div className="footer-section">
                     <h3>Contact</h3>
                     <p>(514) 992-8595</p>
-                    <p> <a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
-                    <p> RBQ : 5587-0471-01</p>
+                    <p><a href="mailto:info@batiquebec.com" className="footer-link">info@batiquebec.com</a></p>
+                    <p>RBQ : 5587-0471-01</p>
                 </div>
 
                 {/* 💬 Section Action */}
@@ -44,7 +42,18 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Copyright */}
+            {/* ✅ Logos APCHQ + RBQ pour mobile */}
+            <div className="footer-certifications">
+                <div className="certification-block">
+                    <img src="/images/logo_apchq_full-removebg-preview.png" alt="Logo APCHQ" />
+                    <p>{t("entrepreneurs")}</p>
+                </div>
+                <div className="certification-block">
+                    <img src="/images/rbqlogo-removebg-preview.png" alt="Logo RBQ" />
+                    <p>RBQ : 5820-5246-01</p>
+                </div>
+            </div>
+
             <div className="footer-copyright">
                 <p>© 2024 Bâti Québec Inc, {t("copyright")}</p>
             </div>
@@ -52,4 +61,4 @@ const Footer = () => {
     );
 };
 
-export default Footer; 
+export default Footer;

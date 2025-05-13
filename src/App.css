@@ -15,6 +15,36 @@ body {
   transition: filter 300ms;
 }
 
+.footer-certifications {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .footer-certifications {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .certification-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #AD8A64;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+  }
+
+  .certification-block img {
+    width: 30px;
+    height: auto;
+  }
+}
+
 main {
   flex: 1;
   padding: 0;

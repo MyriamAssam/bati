@@ -464,14 +464,10 @@ body {
     position: relative;
   }
 
-  img {
+  .responsive-img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-
   }
 
 }
@@ -881,7 +877,12 @@ header {
     width: 110px;
     height: auto;
     margin-bottom: 0;
+    display: block;
+    position: static;
+    /* très important */
+    object-fit: contain;
   }
+
 
   .footer-title {
     font-size: 18px;

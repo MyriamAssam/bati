@@ -476,35 +476,7 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .fixed-logos {
-    position: static;
-    flex-direction: column;
-    padding: 10px;
-  }
 
-  .logo-apchq,
-  .logo-rbq {
-    flex-direction: row;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    padding: 10px;
-    margin: 5px 0;
-  }
-
-  .logo-rbq p,
-  .logo-apchq p {
-    font-size: 14px;
-    margin: 0 10px;
-  }
-
-  .logo-apchq img,
-  .logo-rbq img {
-    width: 30px;
-    margin: 0 5px;
-  }
-}
 
 .card {
   padding: 2em;
@@ -827,7 +799,31 @@ header {
 
 @media (max-width: 768px) {
   .fixed-logos {
-    position: static !important;
-    margin-top: 30px;
+    position: relative !important;
+    bottom: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .logo-apchq,
+  .logo-rbq {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .logo-apchq p,
+  .logo-rbq p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .logo-apchq img,
+  .logo-rbq img {
+    width: 30px;
+    height: auto;
   }
 }

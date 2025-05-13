@@ -116,6 +116,37 @@ main {
 }
 
 @media (max-width: 768px) {
+  .fixed-logos {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .logo-apchq,
+  .logo-rbq {
+    width: 90%;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .logo-apchq img,
+  .logo-rbq img {
+    width: 30px;
+    height: auto;
+    margin: 0 10px;
+  }
+
+  .logo-apchq p,
+  .logo-rbq p {
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
   .mobile-menu {
     position: fixed;
     top: 80px;
@@ -731,6 +762,34 @@ header {
   max-width: 400px;
 
   margin-top: 200px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section p,
+  .footer-section h3 {
+    text-align: center;
+  }
+
+  .footer-section img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
 }
 
 .info-box h3 {

@@ -433,6 +433,21 @@ body {
     font-size: 14px;
   }
 
+  @media (max-width: 768px) {
+    .services-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 0 15px;
+      overflow-x: hidden;
+    }
+
+    .service-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
 
   .services-container {
     display: flex;

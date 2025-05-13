@@ -308,6 +308,26 @@ main {
   gap: 40px;
 }
 
+/* Pour le contact */
+.info-box {
+  margin-top: 60px;
+  /* ou même 40px */
+}
+
+/* Pour la prise de rendez-vous */
+.info-box-rdv {
+  margin-top: 60px;
+  /* ou même 40px */
+}
+
+/* Version mobile encore plus rapprochée */
+@media (max-width: 768px) {
+
+  .info-box,
+  .info-box-rdv {
+    margin-top: 30px !important;
+  }
+}
 
 .travaux-container {
   display: flex;

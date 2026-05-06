@@ -5,8 +5,10 @@ import cors from "cors";
 import multer from "multer";
 import path from "path";
 import dotenv from "dotenv";
-//import fs from "fs";
-
+import fs from "fs";
+if (!fs.existsSync("uploads")) {
+   fs.mkdirSync("uploads");
+}
 dotenv.config();
 
 const app = express();
@@ -95,6 +97,9 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
       console.error(t.rdvError, error);
       res.status(500).json({ message: t.rdvError });
    }
+});
+app.get("/api/health", (req, res) => {
+   res.json({ message: "✅ Serveur opérationnel !" });
 });
 // Servir le frontend React
 app.use(express.static(path.join(path.resolve(), "dist")));

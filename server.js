@@ -34,8 +34,10 @@ const upload = multer({ storage });
 
 // Route pour le contact
 app.post("/api/contact", upload.array("files", 5), async (req, res) => {
-    const lang = req.headers['accept-language'] || 'fr';
-    const t = translations[lang] || translations['fr'];
+   const t = {
+   contactSuccess: "✅ Contact envoyé avec succès !",
+   contactError: "❌ Erreur lors du traitement."
+};
 
     try {
         const { firstName, lastName, email, description } = req.body;
@@ -54,8 +56,11 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
 
 
 app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
-    const lang = req.headers['accept-language'] || 'fr';
-    const t = translations[lang] || translations['fr'];
+ const t = {
+   rdvSuccess: "✅ RDV enregistré !",
+   rdvError: "❌ Erreur lors de l'enregistrement.",
+   rdvAlreadyTaken: "Ce créneau est déjà réservé."
+};
 
     try {
         const { firstName, lastName, email, description, date, time } = req.body;

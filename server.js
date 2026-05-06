@@ -102,7 +102,8 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
 
     try {
         const { firstName, lastName, email, description, date, time } = req.body;
-
+        console.log("BODY:", req.body);
+        console.log("FILES:", req.files);
         const existingRdv = await Rdv.findOne({ date, time });
         if (existingRdv) {
             return res.status(400).json({ message: t.rdvAlreadyTaken });
@@ -116,7 +117,11 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
         const fileUrls = (req.files || []).map(
         file => `/uploads/${file.filename}`
       );
-        const newRdv = new Rdv({ ...req.body, files: fileUrls });
+        const newRdv = new Rdv({
+              ...req.body,
+              date: new Date(date),
+              files: fileUrls
+   });
         await newRdv.save();
 
         await Promise.all([

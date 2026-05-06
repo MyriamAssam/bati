@@ -5,7 +5,7 @@ import cors from "cors";
 import multer from "multer";
 import path from "path";
 import dotenv from "dotenv";
-import fs from "fs";
+//import fs from "fs";
 
 dotenv.config();
 
@@ -91,7 +91,12 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
       res.status(500).json({ message: t.rdvError });
    }
 });
+// Servir le frontend React
+app.use(express.static(path.join(path.resolve(), "dist")));
 
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve("dist", "index.html"));
+});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

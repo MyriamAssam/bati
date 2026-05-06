@@ -91,12 +91,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
       res.status(500).json({ message: t.rdvError });
    }
 });
-// Servir le frontend React
-app.use(express.static(path.join(path.resolve(), "dist")));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve("dist", "index.html"));
-});
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {

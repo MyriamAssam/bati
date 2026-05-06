@@ -122,7 +122,11 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
               date: new Date(date),
               files: fileUrls
    });
-        await newRdv.save();
+       await newRdv.save();
+
+       res.status(201).json({
+       message: t.rdvSuccess
+});
 
         await Promise.all([
             // Email client

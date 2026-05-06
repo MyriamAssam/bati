@@ -64,7 +64,7 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
 
     try {
         const { firstName, lastName, email, description } = req.body;
-        const attachments = req.files.map(file => ({
+        const attachments = (req.files || []).map(file => ({
             filename: file.originalname,
             path: file.path
         }));
@@ -108,12 +108,14 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
             return res.status(400).json({ message: t.rdvAlreadyTaken });
         }
 
-        const attachments = req.files.map(file => ({
-            filename: file.originalname,
-            path: file.path
-        }));
+        const attachments = (req.files || []).map(file => ({
+        filename: file.originalname,
+        path: file.path
+       }));
 
-        const fileUrls = req.files.map(file => `/uploads/${file.filename}`);
+        const fileUrls = (req.files || []).map(
+        file => `/uploads/${file.filename}`
+      );
         const newRdv = new Rdv({ ...req.body, files: fileUrls });
         await newRdv.save();
 

@@ -72,7 +72,7 @@ app.post("/api/contact", upload.array("files", 5), async (req, res) => {
         await Promise.all([
             sendEmail(email, t.contactSubject, "", t.contactMessage(firstName), [], t),
             sendEmail(
-                "mimimontmo2@gmail.com",
+                "myriamassam@outlook.com",
                 t.adminContactSubject,
                 "",
                 `
@@ -129,7 +129,7 @@ app.post("/api/rdv", upload.array("files", 5), async (req, res) => {
             ),
             // Email admin avec pièces jointes
             sendEmail(
-                "mimimontmo2@gmail.com",
+                "myriamassam@outlook.com",
                 t.adminRdvSubject,
                 "",
                 `

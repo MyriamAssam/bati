@@ -20,7 +20,7 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 ### 🔹 Application mobile – Bâti Québec Estimation
 - Plateforme : Android Studio (Java)
 - Fonction : Estimer le coût des rénovations
-- ✔️ Estimation des couts de travaux en fonction des matériaux, des dimensions et du cout de la main d'oeuvre
+- Estimation des couts de travaux en fonction des matériaux, des dimensions et du cout de la main d'oeuvre
 
 🔗 [Lien vers le dépôt](https://github.com/MyriamAssam/app-estimation)
 
@@ -28,8 +28,7 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 
 ### 🔹 Site web – Bâti Québec Soumissions
 - Plateforme : React + MongoDB + Postman API
-- Fonction : Création et gestion de soumissions
-- Fonctionnalité : Gestion des rôles, formulaire dynamique, i18n (traduction anglais)
+- Fonction : Création et gestion de soumissions (suppression, ajout, ...), gestion des rôles (client ou entrepreneur), formulaire dynamique, i18n (traduction anglais)
   
 ⚠️ Note:
 Le projet a été développé dans le cadre d’un stage. 
@@ -40,8 +39,7 @@ Certaines fonctionnalités connectées au backend ou à la base de données ne s
 ---
 ### 🔹 Application mobile – Bâti Québec Soumissions
 - Plateforme : Android Studio
-- Fonction : Création et gestion de soumissions
-- Fonctionnalité : Même chose que le site
+- Fonction : Même chose que le site
 
 🔗 [Lien vers le dépôt](https://github.com/MyriamAssam/soumissions-and.git)
 

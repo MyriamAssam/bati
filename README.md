@@ -29,8 +29,11 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 ### 🔹 Site web – Bâti Québec Soumissions
 - Plateforme : React + MongoDB + Postman API
 - Fonction : Création et gestion de soumissions
-- Cliquer sur le lien Render pour voir le resultat et tester
 - Fonctionnalité : Gestion des rôles, formulaire dynamique, i18n (traduction anglais)
+  
+⚠️ Note:
+Le projet a été développé dans le cadre d’un stage. 
+Certaines fonctionnalités connectées au backend ou à la base de données ne sont actuellement plus disponibles, mais le code source et l’interface demeurent accessibles à des fins de démonstration.
 
 🔗 [Lien vers le dépôt](https://github.com/MyriamAssam/app-soumission)
 
@@ -48,6 +51,10 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 - Plateforme : React + MongoDB + Postman API
 - Fonction : Site de la compagnie, prise de rdv et demande de contact
 
+⚠️ Note:
+Le projet a été développé dans le cadre d’un stage. 
+Certaines fonctionnalités connectées au backend ou à la base de données ne sont actuellement plus disponibles, mais le code source et l’interface demeurent accessibles à des fins de démonstration.
+
 🔗 [Lien vers le dépôt](https://github.com/MyriamAssam/bati.git)
 
 ---
@@ -57,8 +64,11 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 - Fonction : Site de recrutement de stages
 - On peut créer des postes, voir les étudiants qui ont postulés et leur informations, changer le status de la demande
 - CSS pas complet, mais toutes les composantes demandées durant les sprints sont là
-- Cliquer sur le lien Render pour voir le resultat
-- Fait en équipe de 3 
+- Fait en équipe de 3
+  
+⚠️ Note:
+Le projet a été développé dans le cadre d'un cours. 
+Certaines fonctionnalités connectées au backend ou à la base de données ne sont actuellement plus disponibles, mais le code source et l’interface demeurent accessibles à des fins de démonstration.
 
 🔗 [Lien vers le dépôt](https://github.com/MyriamAssam/ProjetJob.git)
 
@@ -66,7 +76,7 @@ Je cherche des opportunités dans le développement ou le soutien technique, id�
 
 ### 🔹 Jeu avec java et XML – Combat
 - Plateforme : Eclipse + Java
-- Fonction : jeu de combat de char, chargé de la page de gestion de changement de couleurs du char et de la balle (seule la balle a fonctionnée)
+- Fonction : jeu de combat de char. Chargé de faire la page de gestion de changement de couleurs du char et de la balle (seule la balle a fonctionnée)
 - Travail d'équipe, mais chacun avait une page à faire et nous avons pas fait un jeu au complet
 - Voir le read me a l'intérieur du fichier pour plus de détails
 
